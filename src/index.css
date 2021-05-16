@@ -15,6 +15,20 @@ code {
 a {
   color:#000
 }
+
 a:hover {
   color:	#696969
+}
+
+.skill {
+  min-width: 77px;
+}
+
+.progress-bar{
+  animation: progressBar 3s ease-in-out;
+  animation-fill-mode:both; 
+}
+
+@keyframes progressBar{
+  0%{width: 5%;}
 }
