@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Navbar from './navbar';
+import Background from '../images/MaxPixel.net-Rome-Italy-Colosseum-Roman-Coliseum-City-2030643.jpg';
 
-const Header = (props)=>{
+const Header = ()=>{
     return(
-        <div className='text-center mt-5 pb-3'>
-            <h2 className='text-center'><strong>Salvatore Fiengo</strong></h2>
-            <h5 className='text-center'>Aspiring Developer</h5>
-            <div><a href='https://github.com/SalvatoreFiengo/my_resume.git' target='_blank' rel="noreferrer"><i className="fa fa-2x fa-github" aria-hidden="true"></i> </a></div>
+        <div className='header'>
+            <Navbar/>
+            <div className='header-img' style={{backgroundImage:`url(${Background})`}}></div>
         </div>
     )
 }

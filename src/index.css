@@ -13,22 +13,153 @@ code {
 }
 
 a {
-  color:#000
+  color:#000;
 }
 
-a:hover {
-  color:	#696969
+a.text-light:hover {
+  color: #dae0f0 !important;
+  text-decoration: underline;
+}
+
+/* ref link https://www.maxpixel.net/Rome-Italy-Colosseum-Roman-Coliseum-City-2030643 */
+.header {
+  padding-bottom: 40px;
+}
+
+.nav-relative{
+  z-index: 2;
+  position: relative;
+}
+
+.header-img {
+  height: 415px;
+  background-size: cover;
+  background-color: #242832;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.text-dimgrey a{
+  color: #242832 !important;
+}
+
+.header-img:before{
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(44, 51, 64, 0.7);
+}
+
+.custom-card {
+  max-width: 960px;
+  width: 75%;
+}
+
+.cv-card-shadow{
+  box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
+}
+
+.profile {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.profile > p {
+  line-height: 0.8;
+}
+
+.profile-img {
+  max-width: 200px;
+}
+
+
+.profile-title > span{
+  font-weight: lighter;
+}
+
+.profile-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.profile-list p:not(.detail) {
+  display: block;
+  width: 120px;
+  float: left;
+  color: #333333;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.profile-list .detail {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #9da0a7;
+}
+.card-footer {
+  margin-left: -1px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.code-institute {
+  max-width: 150px;
+  max-height: 245px;
+  overflow-y: auto;
+}
+
+.content {
+  z-index: 2;
+  position: relative;
+  padding-top: 40px
 }
 
 .skill {
   min-width: 77px;
+  margin: 0;
+}
+
+.fa-linkedin-square{
+  color: #0a66c2;
+}
+.fa-linkedin-square:hover {
+  color:	#838383;
+}
+
+.progress {
+  height: 0.5rem;
 }
 
 .progress-bar{
   animation: progressBar 3s ease-in-out;
   animation-fill-mode:both; 
+  height: 0.5rem;
+}
+
+.job-list-item:hover {
+  background-color: #838383;
+  color:#fff;
+}
+
+.job-list-selected {
+  background-color: #545454;
+  color:#fff;
 }
 
 @keyframes progressBar{
   0%{width: 5%;}
+}
+@media screen and (min-width:576px){
+  .profile-card {
+    width: 50%;
+  }
 }
