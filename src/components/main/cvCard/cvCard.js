@@ -1,9 +1,15 @@
-import {useState, useEffect} from 'react';
-import {personalInfo} from '../mock-data/data';
+import {useState, useEffect, useRef} from 'react';
+import {personalInfo} from '../../../mock-data/data';
 
-const CvCard = ()=>{
+const CvCard = ({setCvPosition})=>{
     
     const [time,gettime]= useState('Good morning')
+    
+    const spyScroll = useRef();
+    const handleSpyScroll = ()=>{
+        setCvPosition(spyScroll.current.offsetTop);
+    }
+
     useEffect(()=>{
         gettime(()=>{
             if(parseInt(new Date().getHours())<12){
@@ -16,8 +22,10 @@ const CvCard = ()=>{
         })
     },[time])
 
+    useEffect(handleSpyScroll)
+
     return(
-        <div className='card mx-auto mt-5 mb-5 cv-card-shadow custom-card'>
+        <div ref={spyScroll} className='card mx-auto mt-5 mb-5 cv-card-shadow custom-card'>
             <div className='card-body'>
                 <div className='row'>
                     <div className='col-12 col-lg-6 col-xl-4'>
@@ -84,15 +92,13 @@ const CvCard = ()=>{
                     </div>
                 </div>
             </div>
-            <div className='card-footer bg-success text-center'>
-                <div>
-                    <a className='m-3' href='https://github.com/SalvatoreFiengo/my_resume.git' target='_blank' rel='noreferrer' aria-label='Github link here'>
+            <div className='card-footer bg-success text-center d-flex justify-content-center'>
+                    <a className='no-hover m-2' href='https://github.com/SalvatoreFiengo/my_resume.git' target='_blank' rel='noreferrer' aria-label='Github link here'>
                         <i className='fa fa-2x fa-github text-white' aria-hidden='true'></i> 
                     </a>
-                    <a className='m-3' href='https://www.linkedin.com/in/salvatorefiengo' target='_blank' rel="noreferrer" aria-label='Linkedin Profile link here'>
+                    <a className='no-hover m-2' href='https://www.linkedin.com/in/salvatorefiengo' target='_blank' rel="noreferrer" aria-label='Linkedin Profile link here'>
                         <i className='fa fa-2x fa-linkedin-square text-white' aria-hidden='true'></i>
                     </a>
-                </div>
             </div>
         </div>
     );

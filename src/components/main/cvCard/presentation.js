@@ -1,4 +1,4 @@
-import resume from '../resume/Resume.pdf';
+import resume from '../../../resume/Resume.pdf';
 
 const Presentation = ()=>(
     <div className='mt-3'>

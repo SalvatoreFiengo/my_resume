@@ -1,9 +1,16 @@
+import { useEffect, useRef } from 'react';
 import SkillList from './skillList'
-import {cardTitles,frontEnd,backEnd,game} from '../mock-data/data'
-const Skills = ()=>{
+import {cardTitles,frontEnd,backEnd,game} from '../../../mock-data/data';
 
+const Skills = ({setSkillPosition})=>{
+    const spyScroll = useRef();
+    const handleSpyScroll = ()=>{
+        setSkillPosition(spyScroll.current.offsetTop);
+    };
+    useEffect(handleSpyScroll);
+    
     return(
-        <div>
+        <div ref={spyScroll}>
             <h3 className='text-center mt-5 mb-3'>Programming Skills</h3>
             <div className='card mx-auto custom-card cv-card-shadow'>
                 <div className='card-body'>

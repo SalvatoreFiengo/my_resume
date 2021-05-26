@@ -1,17 +1,22 @@
+import {useState} from 'react';
+import Header from './components/header/header';
+import CvCard from './components/main/cvCard/cvCard';
+import Presentation from './components/main/cvCard/presentation';
+import Skills from './components/main/skills/skills';
+import WorkHistory from './components/main/workHistory/workHistory';
 
-import Header from './components/header';
-import CvCard from './components/cvCard';
-import Presentation from './components/presentation';
-import Skills from './components/skills';
-import WorkHistory from './components/workHistory';
 function App() {
+  const [cvPosition,setCvPosition] = useState(0) 
+  const [skillPosition,setSkillPosition] = useState(0)
+  const [WorkHistoryPos,setWorkHistoryPos] = useState(0)
   return (
     <div>
-      <Header/>
+      <Header cvPosition={cvPosition} skillPosition={skillPosition} WorkHistoryPos={WorkHistoryPos}/>
       <div className='content'>
-        <CvCard/>
+        <CvCard setCvPosition = {setCvPosition}/>
         <Presentation/>
-        <Skills/>
+        <Skills setSkillPosition = {setSkillPosition} />
+        <WorkHistory setWorkHistoryPos = {setWorkHistoryPos}/>
       </div>
     </div>
   );

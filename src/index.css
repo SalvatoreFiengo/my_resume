@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: whitesmoke;
 }
 
 code {
@@ -14,11 +15,27 @@ code {
 
 a {
   color:#000;
+  text-decoration: none;
+}
+button.anchor{
+  border: none;
+  background-color: inherit;
+  color:#000;
 }
 
-a.text-light:hover {
-  color: #dae0f0 !important;
-  text-decoration: underline;
+.no-hover:hover{
+  background-color: inherit !important;
+}
+
+i{
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+i:hover{
+  border-radius: 50%;
+  background-color: #63a184;
+  line-height: 1.1;
 }
 
 /* ref link https://www.maxpixel.net/Rome-Italy-Colosseum-Roman-Coliseum-City-2030643 */
@@ -26,10 +43,29 @@ a.text-light:hover {
   padding-bottom: 40px;
 }
 
+nav.fixed-top {
+  background-color: #63a184;
+  border-bottom: 1px solid #242832 
+}
+
 .nav-relative{
   z-index: 2;
   position: relative;
 }
+
+.fixed-top button,.nav-relative button {
+  color:#fff
+}
+
+.nav-relative button.anchor:hover {
+  color: #20c997 !important;
+  text-decoration: underline;
+
+}
+.fixed-top button.anchor:hover{
+  color: #242832 !important;
+  text-decoration: underline;
+} 
 
 .header-img {
   height: 415px;
@@ -44,9 +80,6 @@ a.text-light:hover {
   z-index: 1;
 }
 
-.text-dimgrey a{
-  color: #242832 !important;
-}
 
 .header-img:before{
   content: '';
@@ -109,6 +142,10 @@ a.text-light:hover {
   margin-left: -1px;
   margin-right: -1px;
   margin-bottom: -1px;
+  padding: 0;
+}
+.card-footer a:hover {
+  background-color: RGBA(112, 128, 144,0.7);
 }
 
 .code-institute {
@@ -155,11 +192,80 @@ a.text-light:hover {
   color:#fff;
 }
 
+.job-description {
+
+  border-top: 4px solid #198754;
+}
+
+.job-text-list{
+  list-style: square;
+}
+
+.job-text-item{
+  line-height: 1;
+}
+
+.svg-position {
+  position: absolute;
+  z-index: 0;
+  left: calc(50% - 150px);
+}
+
+@-webkit-keyframes progressBar{
+  0%{width: 5%;}
+}
 @keyframes progressBar{
   0%{width: 5%;}
 }
+
 @media screen and (min-width:576px){
   .profile-card {
     width: 50%;
   }
 }
+@media screen and (min-width:768px){
+  .job-description.arrow-left:after {
+    content: " ";
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #fff;
+    border-left: none;
+    border-bottom: 15px solid transparent;
+  }
+  
+  .job-description.arrow-right:after {
+    content: " ";
+    position: absolute;
+    right: -15px;
+    top: 15px;
+    border-top: 15px solid transparent;
+    border-right: none;
+    border-left: 15px solid #fff;
+    border-bottom: 15px solid transparent;
+  }
+  .circle{
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #198754;
+    width: 9px;
+    height: 9px;
+    top: 27px;
+  }
+
+  .left{
+    right:-34px;
+  }
+
+  .right {
+    left:-33px;
+  }
+
+  small.date{
+    float:right;
+  }
+
+}
+
