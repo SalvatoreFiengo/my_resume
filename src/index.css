@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: whitesmoke;
+  background-color: #efefef;
 }
 
 code {
@@ -17,35 +17,25 @@ a {
   color:#000;
   text-decoration: none;
 }
+
 button.anchor{
   border: none;
   background-color: inherit;
-  color:#000;
+  width: 100%;
 }
 
-.no-hover:hover{
-  background-color: inherit !important;
-}
-
-i{
-  height: 2.2rem;
-  width: 2.2rem;
-}
-
-i:hover{
-  border-radius: 50%;
-  background-color: #63a184;
-  line-height: 1.1;
-}
 
 /* ref link https://www.maxpixel.net/Rome-Italy-Colosseum-Roman-Coliseum-City-2030643 */
 .header {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
+  position: relative;
+  height: 58px;
 }
 
 nav.fixed-top {
   background-color: #63a184;
-  border-bottom: 1px solid #242832 
+  outline: 1px solid #242832;
+  outline-offset: -1px;
 }
 
 .nav-relative{
@@ -53,19 +43,43 @@ nav.fixed-top {
   position: relative;
 }
 
+.nav-list{
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  right: 1rem;
+  z-index: 2;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.nav-relative .nav-list{
+  background-color: #efefef !important;
+  border:1px solid #fff;
+}
+
+.fixed-top .nav-list {
+  background-color: #63a184;
+  border:1px solid #242832;
+  border-top:0;
+}
+.nav-relative .nav-list li button{
+  color: #242832;
+}
+.nav-relative .nav-list li button:hover{
+  background-color: #63a184;
+  color: #242832;
+}
+
+.fixed-top .nav-list li button:hover{
+  background-color: #efefef;
+  color: #242832;
+}
+
 .fixed-top button,.nav-relative button {
   color:#fff
 }
-
-.nav-relative button.anchor:hover {
-  color: #20c997 !important;
-  text-decoration: underline;
-
-}
-.fixed-top button.anchor:hover{
-  color: #242832 !important;
-  text-decoration: underline;
-} 
 
 .header-img {
   height: 415px;
@@ -79,7 +93,6 @@ nav.fixed-top {
   right: 0;
   z-index: 1;
 }
-
 
 .header-img:before{
   content: '';
@@ -103,6 +116,7 @@ nav.fixed-top {
 .profile {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
+
 .profile > p {
   line-height: 0.8;
 }
@@ -121,6 +135,7 @@ nav.fixed-top {
   margin: 0;
   padding: 0;
 }
+
 .profile-list p:not(.detail) {
   display: block;
   width: 120px;
@@ -144,20 +159,21 @@ nav.fixed-top {
   margin-bottom: -1px;
   padding: 0;
 }
-.card-footer a:hover {
-  background-color: RGBA(112, 128, 144,0.7);
+
+.social i.fa{
+  height: 2.2rem;
+  width: 2.2rem;
 }
 
-.code-institute {
-  max-width: 150px;
-  max-height: 245px;
-  overflow-y: auto;
+.social i.fa:hover{
+  border-radius: 50%;
+  background-color: #63a184;
+  line-height: 1.1;
 }
 
 .content {
-  z-index: 2;
+  z-index: 1;
   position: relative;
-  padding-top: 40px
 }
 
 .skill {
@@ -192,23 +208,38 @@ nav.fixed-top {
   color:#fff;
 }
 
-.job-description {
+.description-border-top {
 
   border-top: 4px solid #198754;
+  color:#757575;
 }
 
 .job-text-list{
   list-style: square;
 }
 
-.job-text-item{
-  line-height: 1;
+.text-item{
+  line-height: 1.1;
+  font-size: 0.9rem;
 }
 
 .svg-position {
   position: absolute;
   z-index: 0;
   left: calc(50% - 150px);
+}
+
+.footer {
+  padding: 30px 0;
+}
+
+.footer .social i.fa{
+  color:#d7d7d7
+}
+
+.footer .social i.fa:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  color:#6e6e6e;
 }
 
 @-webkit-keyframes progressBar{
@@ -224,7 +255,46 @@ nav.fixed-top {
   }
 }
 @media screen and (min-width:768px){
-  .job-description.arrow-left:after {
+
+  button.anchor {
+    width: auto;
+  }
+
+  .nav-relative .nav-list {
+    background-color: transparent !important;
+  }
+
+  .fixed-top .nav-list, .nav-relative .nav-list{
+    position: initial;
+    display: block;
+    float: right;
+    box-shadow: unset;
+    border: 0;
+    border-radius: unset;
+  }
+
+  .fixed-top .nav-list li button, .nav-relative .nav-list li button {
+    color: #fff;
+    
+  }
+
+  .fixed-top .nav-list li button {
+    margin-bottom: 1rem;
+  }
+
+  .nav-relative button:hover {
+    color: #242832 !important;
+    background-color: #efefef !important;
+    border-radius: 4px;
+  }
+  
+  .fixed-top button:hover{
+    color: #242832 !important;
+    background-color: #efefef;
+    border-radius: 4px;
+  } 
+  
+  .description-border-top.arrow-left:after {
     content: " ";
     position: absolute;
     left: -15px;
@@ -235,7 +305,7 @@ nav.fixed-top {
     border-bottom: 15px solid transparent;
   }
   
-  .job-description.arrow-right:after {
+  .description-border-top.arrow-right:after {
     content: " ";
     position: absolute;
     right: -15px;
@@ -245,6 +315,7 @@ nav.fixed-top {
     border-left: 15px solid #fff;
     border-bottom: 15px solid transparent;
   }
+
   .circle{
     display: block;
     position: absolute;

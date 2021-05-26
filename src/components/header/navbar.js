@@ -1,30 +1,43 @@
 import {useState, useEffect} from 'react'
 
-const Navbar = ({cvPosition, skillPosition,WorkHistoryPos})=>{
+const Navbar = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
+    const [mobileNavDisplay, setMobileNavDisplay] = useState('d-none')
     const [navBackground, setNabBackground] = useState('nav-relative bg-transparent')
     const [pos,setPos]=useState(null);
-    
+    const handleNavButton = (e)=>{
+        e.preventDefault()
+        mobileNavDisplay==='d-none'?setMobileNavDisplay('d-block'):setMobileNavDisplay('d-none')
+    }
     const handleSpyScroll = ()=>{
-        if (cvPosition){
+        if (pos){
         switch(pos){
             case 1:
                 window.scrollTo(0,cvPosition-60);
+                setMobileNavDisplay('d-none')
                 break;
             case 2:
                 window.scrollTo(0,skillPosition-60);
+                setMobileNavDisplay('d-none')
                 break;
             case 3:
+                window.scrollTo(0,EducationPos-60);
+                setMobileNavDisplay('d-none')
+                break;
+            case 4:
                 window.scrollTo(0,WorkHistoryPos-60);
+                setMobileNavDisplay('d-none')
                 break;
             default:
                 window.scrollTo(0,0);
+                setMobileNavDisplay('d-none')
                 break;
         }}
+        setPos(null)
     };
 
     useEffect(()=>{
         const handleNavBackgroundChange = ()=>{
-            if(window.pageYOffset>50){
+            if(window.pageYOffset>25){
                 setNabBackground('fixed-top text-dimgrey')
             }else{
                 setNabBackground('nav-relative bg-transparent')
@@ -37,25 +50,30 @@ const Navbar = ({cvPosition, skillPosition,WorkHistoryPos})=>{
     useEffect(handleSpyScroll);
 
     return(
-        <nav className={['w-100', navBackground].join(' ')}>
-            <div className='mt-3'>
+        <nav className={['w-100 pt-2', navBackground].join(' ')}>
+            <div>
                 <div className='row'>
-                    <div className='col-xs-6 col-3'>
-                        <button className="anchor navbar-brand ms-5 pt-0" onClick={()=>setPos('default')}>My Resume</button>
-                        <button className="navbar-toggler" type="button">
-                        <span className="navbar-toggler-icon"></span>
+                    <div className='col-4 col-md-3'>
+                        <button className="anchor navbar-brand ms-3 ms-md-5 pt-0" onClick={()=>setPos('default')}>My Resume</button>
+                    </div>
+                    <div className='d-block d-md-none col-8 text-end'>
+                        <button className="border mb-1 me-5 bg-transparent" type="button" onClick={(e)=>handleNavButton(e)}>
+                            <i className="fa fa-2x fa-bars" aria-hidden="true"></i>
                         </button>
                     </div>
-                    <div className='d-none d-md-block col-7'>
-                        <ul className="d-inline float-end mr-3 mt-2 mb-1">
-                            <li className="d-inline me-3">
+                    <div className='col-4 col-md-7'>
+                        <ul className={['nav-list d-md-inline mr-3 mt-md-2 mb-1',mobileNavDisplay].join(' ')}>
+                            <li className="d-md-inline me-md-3">
                                 <button className='anchor' onClick={()=>setPos(1)}>Presentation</button>
                             </li>
-                            <li className="d-inline me-3">
+                            <li className="d-md-inline me-md-3">
                                 <button className='anchor' onClick={()=>setPos(2)}>Skills</button>
                             </li>
-                            <li className="d-inline">
-                                <button className='anchor' onClick={()=>setPos(3)}>Work History</button>
+                            <li className="d-md-inline me-md-3">
+                                <button className='anchor' onClick={()=>setPos(3)}>Education</button>
+                            </li>
+                            <li className="d-md-inline">
+                                <button className='anchor' onClick={()=>setPos(4)}>Work History</button>
                             </li>
                         </ul>
                     </div>
