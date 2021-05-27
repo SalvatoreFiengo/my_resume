@@ -2,7 +2,18 @@ export const cardTitles = ['Front-end', 'Back-end', 'Game'];
 export const frontEnd = [{name:'Javascript', value:'85'}, {name:'React',value:'60'}, {name:'CSS3',value:'90'}, {name:'HTML5',value:'100'}, {name:'Bootstrap',value:'80'}];
 export const backEnd = [{name:'Python',value:'85'}, {name:'Django',value:'60'}, {name:'REST api',value:'50'}];
 export const game = [{name:'PyGame',value:'50'}]
-export const personalInfo = [{name:'Salvatore Fiengo',role:'Aspiring Developer',address:'49 Shandon Mill, Shanon Park, Dublin 7',email:'Sal.fiengo@gmail.com',phone:'+353(0)834320505'}]
+export const personalInfo = [
+    {
+        name:'Salvatore Fiengo',
+        role:'Aspiring Developer',
+        address:'49 Shandon Mill, Shandon Park, Dublin 7',
+        email:'Sal.fiengo@gmail.com',
+        phone:'+353(0)834320505',
+        presentation: `Graduated Web Developer with Diploma in Full Stack Software Development and Python certified (MS),
+                offering enthusiasm and understanding of various programming languages. 
+                In current role,further programming experience gathered while developing a leave tracker desktop app.`
+        }
+    ]
 export const linksAndEdu = {
     gitHub:'https://github.com/SalvatoreFiengo/my_resume.git',
     linkedin:'https://www.linkedin.com/in/salvatorefiengo',
@@ -23,7 +34,7 @@ export const linksAndEdu = {
 
     }
 }
-export const jobs=[
+export const jobs = [
     {
         id:'0',
         name:'Collections Team Leader',
@@ -51,41 +62,48 @@ export const jobs=[
     },
     {
         id:'2',
-        name: 'Senior Credit Collections Analyst',
+        name: 'Technical Customer Support',
         place: 'Accenture, Dublin, Dublin Co.',
         description: [
-            'Reviewed customer files on regular basis to make sure receivables were in sound condition.',
-            'Made decisions and recommendations about extending lines of credit.',
-            'Performed credit reviews on corporations to assess financial conditions.',
-            'Increased customer satisfaction by resolving billing issues.',
-            'Awarded best collector year 2018',            
+            'Devised solutions to operations issues related to vary systems including Office365 and OS Windows',
+            'working closely via phone,email and web teleconference.',
+            'Assessed systemhardwareandsoftwareandsuggestedmodificationstoreduce lagtimeandimproveoverallspeed.',
+            'Documented all transactions and support interactions in system for future reference.',
+            'Explained technical information in clear terms to non-technical individuals to promote betterunderstanding.',
+            'Quality rate: over95%'           
         ],
-        date: '07/2016 - 06/2020'
+        date: '10/2015 - 09/2016'
     },
     {
         id:'3',
-        name: 'Senior Credit Collections Analyst',
-        place: 'Accenture, Dublin, Dublin Co.',
+        name: 'Field SalesRepresentative',
+        place: 'Ace 8 Media, Dublin, Dublin Co.',
         description: [
-            'Reviewed customer files on regular basis to make sure receivables were in sound condition.',
-            'Made decisions and recommendations about extending lines of credit.',
-            'Performed credit reviews on corporations to assess financial conditions.',
-            'Increased customer satisfaction by resolving billing issues.',
-            'Awarded best collector year 2018',            
+            'Identified prospect needs and developed appropriate responses along with information on suitable products and services.',
+            'Demonstrated products and specific features at customer locations (B2B).',            
         ],
-        date: '07/2016 - 06/2020'
+        date: '06/2015 - 08/2015'
     },
     {
         id:'4',
-        name: 'Senior Credit Collections Analyst',
-        place: 'Accenture, Dublin, Dublin Co.',
+        name: 'Technical Support Apprentice',
+        place: 'Agic Technologies, Rome, Italy',
         description: [
-            'Reviewed customer files on regular basis to make sure receivables were in sound condition.',
-            'Made decisions and recommendations about extending lines of credit.',
-            'Performed credit reviews on corporations to assess financial conditions.',
-            'Increased customer satisfaction by resolving billing issues.',
-            'Awarded best collector year 2018',            
+            'Performed Troubleshooting of all information system/application issues for over 120 users.',
+            'Desktop, Laptop, Mobile devices support, remotely and on site',
+            'Customer service for external business customers and private persons,remotely and onsite.',            
         ],
-        date: '07/2016 - 06/2020'
+        date: '02/2014 - 08/2014'
+    },
+    {
+        id:'5',
+        name: 'Field Sales Agent',
+        place: 'Sky Italia SRL, Rome, Italy',
+        description: [
+            'Direct sales to private individuals and businesses',
+            'Coaching experience with external personnel',
+            'Negotiation , soft sale,and hard sale experience.',            
+        ],
+        date: '02/2010 - 07/2013'
     }
 ]
