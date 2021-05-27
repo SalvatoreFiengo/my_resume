@@ -12,26 +12,23 @@ const Navbar = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
         if (pos){
         switch(pos){
             case 1:
-                window.scrollTo(0,cvPosition-60);
-                setMobileNavDisplay('d-none')
+                window.scrollTo(0,cvPosition-60);              
                 break;
             case 2:
                 window.scrollTo(0,skillPosition-60);
-                setMobileNavDisplay('d-none')
                 break;
             case 3:
                 window.scrollTo(0,EducationPos-60);
-                setMobileNavDisplay('d-none')
                 break;
             case 4:
                 window.scrollTo(0,WorkHistoryPos-60);
-                setMobileNavDisplay('d-none')
                 break;
             default:
                 window.scrollTo(0,0);
-                setMobileNavDisplay('d-none')
                 break;
-        }}
+        };
+        setMobileNavDisplay('d-none');
+    }
         setPos(null)
     };
 
@@ -50,7 +47,7 @@ const Navbar = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
     useEffect(handleSpyScroll);
 
     return(
-        <nav className={['w-100 pt-2', navBackground].join(' ')}>
+        <nav className={['w-100 pt-2 animated', navBackground].join(' ')}>
             <div>
                 <div className='row'>
                     <div className='col-4 col-md-3'>

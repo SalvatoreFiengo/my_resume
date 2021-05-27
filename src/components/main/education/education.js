@@ -1,9 +1,14 @@
 import { useRef, useEffect } from 'react';
 import { linksAndEdu } from '../../../mock-data/data';
 
-const Education = ({setHeight})=>{
+const Education = ({setHeight, animation})=>{
     const divHeight = useRef();
+
     const certHtmlData = ()=>{return {__html: linksAndEdu.cert.certdata}}
+
+    const animatedLeft = animation? 'animated-left-item':null;
+    const animatedRight = animation? 'animated-right-item':null;
+
     useEffect(()=>{
         const svgHeightHandler = ()=>{
             setHeight(divHeight.current.clientHeight - 50)
@@ -16,7 +21,7 @@ const Education = ({setHeight})=>{
     return(
         <div ref={divHeight} className='row'>
             <div className='col-12 col-md-6'>
-                <div className='card description-border-top cv-card-shadow mt-md-3 me-md-3 arrow-right'>
+                <div className={['card description-border-top cv-card-shadow mt-md-3 me-md-3 arrow-right', animatedLeft].join(' ')}>
                     <div className='card-body'>
                         <div className='row'>
                             <div className='col-12 col-md-4'>
@@ -53,13 +58,13 @@ const Education = ({setHeight})=>{
                 </div>
             </div>
             <div className='col-12 col-md-6'>
-                <div className='card description-border-top cv-card-shadow mt-3 mt-md-5 ms-md-3 arrow-left'>
+                <div className={['card description-border-top cv-card-shadow mt-3 mt-md-5 ms-md-3  arrow-left', animatedRight].join(' ')}>
                     <div className='card-body'>
                         <div className='row'>
-                            <div className='col-12 col-md-4'>
+                            <div className='col-12 col-md-5'>
                                 <div dangerouslySetInnerHTML={certHtmlData()}></div>
                             </div>
-                            <div className='col-12 col-md-8'>
+                            <div className='col-12 col-md-7'>
                                 <h5 className='card-title border-bottom border-dark pb-3 mb-0'>{linksAndEdu.cert.name}</h5>
                                 <div className='row mb-3'>
                                     <div className='col-12 col-md-7'>

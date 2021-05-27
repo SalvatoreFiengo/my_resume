@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Header from './components/header/header';
 import CvCard from './components/main/cvCard/cvCard';
 import Presentation from './components/main/cvCard/presentation';

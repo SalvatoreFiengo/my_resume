@@ -109,6 +109,11 @@ nav.fixed-top {
   width: 75%;
 }
 
+.animated, .animated-left-item,.animated-right-item {
+  opacity: 1;
+  animation: showUp 1s normal; 
+}
+
 .cv-card-shadow{
   box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
 }
@@ -226,7 +231,7 @@ nav.fixed-top {
 .svg-position {
   position: absolute;
   z-index: 0;
-  left: calc(50% - 150px);
+  left: calc(50% - 150px); 
 }
 
 .footer {
@@ -245,8 +250,24 @@ nav.fixed-top {
 @-webkit-keyframes progressBar{
   0%{width: 5%;}
 }
+
 @keyframes progressBar{
   0%{width: 5%;}
+}
+
+@keyframes showUp {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes showUpLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes showUpRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @media screen and (min-width:576px){
@@ -254,6 +275,7 @@ nav.fixed-top {
     width: 50%;
   }
 }
+
 @media screen and (min-width:768px){
 
   button.anchor {
@@ -334,6 +356,14 @@ nav.fixed-top {
     left:-33px;
   }
 
+  .animated-left-item {
+    opacity: 1;
+    animation: showUpLeft 1s normal;  
+  }
+  .animated-right-item {
+    opacity: 1;
+    animation: showUpRight 1s normal;  
+  }
   small.date{
     float:right;
   }

@@ -25,7 +25,7 @@ const CvCard = ({setCvPosition})=>{
     useEffect(handleSpyScroll)
 
     return(
-        <div ref={spyScroll} className='card mx-auto mb-5 cv-card-shadow custom-card'>
+        <div ref={spyScroll} className='card mx-auto mb-5 cv-card-shadow custom-card animated'>
             <div className='card-body'>
                 <div className='row'>
                     <div className='col-12 col-lg-6 col-xl-4'>

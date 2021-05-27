@@ -10,7 +10,7 @@ const Skills = ({setSkillPosition})=>{
     useEffect(handleSpyScroll);
     
     return(
-        <div ref={spyScroll}>
+        <div ref={spyScroll} className='animated'>
             <h3 className='text-center mt-5 mb-3'>Programming Skills</h3>
             <div className='card mx-auto custom-card cv-card-shadow'>
                 <div className='card-body'>
