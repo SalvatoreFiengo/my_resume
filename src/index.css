@@ -262,13 +262,19 @@ nav.fixed-top {
   0%{width: 5%;}
 }
 
+@-webkit-keyframes showUp {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes showUp {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes svg-animation {
-  0%{height:0;}
+@-webkit-keyframes showUpLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes showUpLeft {
@@ -276,10 +282,24 @@ nav.fixed-top {
   to { opacity: 1; transform: translateX(0); }
 }
 
+@-webkit-keyframes showUpRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 @keyframes showUpRight {
   from { opacity: 0; transform: translateX(20px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
+@-webkit-keyframes svg-animation {
+  0%{height:0;}
+}
+
+@keyframes svg-animation {
+  0%{height:0;}
+}
+
 
 @media screen and (min-width:576px){
   .profile-card {
