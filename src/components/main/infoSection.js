@@ -35,7 +35,7 @@ const InfoSection = ({setPos, list:List, text})=>{
                 {text}
             </h3>
             <div className='custom-card mx-auto'>
-                <Svg height={height}/>
+                <Svg height={height} animation={animation}/>
                 <List setHeight={setHeight} animation={animation}/>
             </div>
         </div>

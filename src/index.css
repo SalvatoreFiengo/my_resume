@@ -111,7 +111,14 @@ nav.fixed-top {
 
 .animated, .animated-left-item,.animated-right-item {
   opacity: 1;
-  animation: showUp 1s normal; 
+  animation: showUp 1.5s normal; 
+}
+.animated-svg{
+  opacity: 1;
+  animation: showUp 4s normal; 
+}
+.animated-svg svg {
+  animation:svg-animation 2s normal;
 }
 
 .cv-card-shadow{
@@ -258,6 +265,10 @@ nav.fixed-top {
 @keyframes showUp {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes svg-animation {
+  0%{height:0;}
 }
 
 @keyframes showUpLeft {

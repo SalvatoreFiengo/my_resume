@@ -1,5 +1,5 @@
-const Svg=({height})=>(
-    <div className='svg-position'>
+const Svg=({height, animation})=>(
+    <div className={['svg-position', animation?'animated-svg': null].join(' ')}>
         <svg 
             width="100%" 
             height={height+'px'} 
