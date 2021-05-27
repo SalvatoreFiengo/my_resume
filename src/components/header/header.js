@@ -6,7 +6,8 @@ const Header = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
     return(
         <div className='header mb-5'>
             <Navbar cvPosition={cvPosition} skillPosition={skillPosition} WorkHistoryPos={WorkHistoryPos} EducationPos={EducationPos}/>
-            <div className='header-img' style={{backgroundImage:`url(${Background})`}}></div>
+            <div className='header-img' style={{backgroundImage:`url(${Background})`}}>
+            </div>
         </div>
     )
 }

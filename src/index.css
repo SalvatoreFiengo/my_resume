@@ -24,8 +24,6 @@ button.anchor{
   width: 100%;
 }
 
-
-/* ref link https://www.maxpixel.net/Rome-Italy-Colosseum-Roman-Coliseum-City-2030643 */
 .header {
   padding-bottom: 20px;
   position: relative;
@@ -254,6 +252,17 @@ nav.fixed-top {
   color:#6e6e6e;
 }
 
+.attributions {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  color: #6e6e6e;
+}
+.attributions a:hover{
+  color: #198754;
+}
+
 @-webkit-keyframes progressBar{
   0%{width: 5%;}
 }
@@ -397,6 +406,15 @@ nav.fixed-top {
   }
   small.date{
     float:right;
+  }
+  .attributions {
+    position: absolute;
+    text-align: justify;
+    width: auto;
+    right: 0;
+    margin-right: 3rem;
+    font-size: 0.8rem;
+    color: #6e6e6e;
   }
 
 }
