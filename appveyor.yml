@@ -6,12 +6,6 @@ version: '{build}'
 # Do not build on gh tags
 skip_tags: true
 
-# Test against these versions of Node.js
-environment:
-  matrix:
-    # Node versions to run
-    - nodejs_version: 'v14.17.0'
-
 # Fix line endings in Windows. (runs before repo cloning)
 init:
   - git config --global core.autocrlf input
@@ -20,11 +14,18 @@ init:
 install:
   # Install the latest stable version of Node
   - ps: Install-Product node $env:nodejs_version
-  - npm ci
+  - npm install
+  - npm test
 
 # Disable automatic builds
 build: off
 
+# Test against these versions of Node.js
+environment:
+  matrix:
+    # Node versions to run
+    - nodejs_version: 'v14.17.0'
+    
 # Post-install test scripts
 test_script:
   # Output debugging info
