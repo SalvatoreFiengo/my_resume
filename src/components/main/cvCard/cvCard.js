@@ -12,9 +12,10 @@ const CvCard = ({setCvPosition})=>{
 
     useEffect(()=>{
         gettime(()=>{
-            if(parseInt(new Date().getHours())<12){
+            const nowTime = parseInt(new Date().getHours());
+            if(nowTime<12){
                 return 'Good Morning'
-            }else if(parseInt(new Date().getHours())<19){
+            }else if(nowTime <19){
                 return 'Good Afternoon'
             }else{
                 return 'Good Evening'

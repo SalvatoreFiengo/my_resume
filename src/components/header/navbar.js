@@ -4,10 +4,12 @@ const Navbar = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
     const [mobileNavDisplay, setMobileNavDisplay] = useState('d-none')
     const [navBackground, setNabBackground] = useState('nav-relative bg-transparent')
     const [pos,setPos]=useState(null);
+
     const handleNavButton = (e)=>{
         e.preventDefault()
         mobileNavDisplay==='d-none'?setMobileNavDisplay('d-block'):setMobileNavDisplay('d-none')
-    }
+    };
+    
     const handleSpyScroll = ()=>{
         if (pos){
         switch(pos){

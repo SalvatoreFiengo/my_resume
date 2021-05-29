@@ -1,5 +1,6 @@
 
 const SkillList = (props)=>{
+    const skillPercent = (value)=>({width: value+'%'})
     return(
         <div className='mb-3'>
             <h5 className='text-center'>{props.cardTitle}</h5>
@@ -10,16 +11,17 @@ const SkillList = (props)=>{
                     <div className="progress flex-fill  ms-2 mt-1">
                         <div 
                             className='progress-bar bg-success' 
-                            style={{width: skill.value+'%'}} 
+                            style={skillPercent(skill.value)} 
                             role="progressbar" 
                             aria-valuenow={skill.value} 
                             aria-valuemin="0" 
                             aria-valuemax="100" 
-                            aria-label={skill.name}></div>
+                            aria-label={skill.name}>
+                        </div>
                     </div>                            
                 </div>
             ))}
         </div>
     )
-}
-export default SkillList
+};
+export default SkillList;

@@ -1,8 +1,11 @@
 const Footer = ()=>(
     <footer className='footer '>
         <div className="attributions">
-            <p className='p-0 m-0'><strong>Attributions:</strong></p>
-            <p className='p-0 m-0'><small>
+            <p className='p-0 m-0'>
+                <strong>Attributions:</strong>
+            </p>
+            <p className='p-0 m-0'>
+                <small>
                     <a className='me-1' href='https://www.maxpixel.net/Rome-Italy-Colosseum-Roman-Coliseum-City-2030643'>
                     Rome's photo from MaxPixel
                     </a>
