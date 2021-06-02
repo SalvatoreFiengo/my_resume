@@ -1,5 +1,17 @@
+import { FC } from 'react';
 
-const Job = ({data,index, animation})=>{
+type JobProps = {
+    data:{
+        id: string,
+        name: string
+        place: string,
+        date: string,
+        description: string[]
+    },
+    index: number;
+    animation: Boolean
+} 
+const Job: FC<JobProps> = ({data,index, animation})=>{
     const itemCss= index%2===0?'me-md-3 mt-3 arrow-right':'ms-md-3 mt-3 mt-md-5 arrow-left';
     const animated = ()=>{
         if(animation){

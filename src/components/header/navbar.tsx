@@ -1,11 +1,18 @@
-import {useState, useEffect} from 'react'
+import {FC, MouseEvent, useState, useEffect} from 'react'
 
-const Navbar = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
+type ChildProps = {
+    cvPosition: number,
+    skillPosition: number,
+    workHistoryPos: number,
+    educationPos: number
+}
+
+const Navbar:FC<ChildProps> = ({cvPosition, skillPosition,workHistoryPos, educationPos})=>{
     const [mobileNavDisplay, setMobileNavDisplay] = useState('d-none')
     const [navBackground, setNabBackground] = useState('nav-relative bg-transparent')
-    const [pos,setPos]=useState(null);
+    const [pos,setPos]=useState(0);
 
-    const handleNavButton = (e)=>{
+    const handleNavButton = (e:MouseEvent<HTMLButtonElement>)=>{
         e.preventDefault()
         mobileNavDisplay==='d-none'?setMobileNavDisplay('d-block'):setMobileNavDisplay('d-none')
     };
@@ -20,10 +27,10 @@ const Navbar = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
                 window.scrollTo(0,skillPosition-60);
                 break;
             case 3:
-                window.scrollTo(0,EducationPos-60);
+                window.scrollTo(0,educationPos-60);
                 break;
             case 4:
-                window.scrollTo(0,WorkHistoryPos-60);
+                window.scrollTo(0,workHistoryPos-60);
                 break;
             default:
                 window.scrollTo(0,0);
@@ -31,7 +38,7 @@ const Navbar = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
         };
         setMobileNavDisplay('d-none');
     }
-        setPos(null)
+        setPos(0)
     };
 
     useEffect(()=>{
@@ -53,7 +60,7 @@ const Navbar = ({cvPosition, skillPosition,WorkHistoryPos, EducationPos})=>{
             <div>
                 <div className='row'>
                     <div className='col-4 col-md-3'>
-                        <button className="anchor navbar-brand ms-3 ms-md-5 pt-0" onClick={()=>setPos('default')}>My Resume</button>
+                        <button className="anchor navbar-brand ms-3 ms-md-5 pt-0" onClick={()=>setPos(0)}>My Resume</button>
                     </div>
                     <div className='d-block d-md-none col-8 text-end'>
                         <button className="border mb-1 me-5 bg-transparent" type="button" onClick={(e)=>handleNavButton(e)}>

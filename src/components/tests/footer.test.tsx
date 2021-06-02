@@ -1,4 +1,4 @@
-import { shallow, mount, render } from '../../enzyme';
+import { shallow } from '../../enzyme';
 import Footer from '../footer/footer';
 
 describe('footer', ()=>{

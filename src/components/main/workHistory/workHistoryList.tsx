@@ -1,10 +1,14 @@
-import {useRef, useEffect} from 'react';
+import { FC, useRef, useEffect, MutableRefObject} from 'react';
 import Job from './job'; 
 import {jobs} from '../../../mock-data/data';
 
-const WorkHistoryList= ({setHeight, animation})=>{ 
+type WorkHistoryListProps = {
+    setHeight: (value: number) => void,
+    animation: Boolean
+}
+const WorkHistoryList: FC<WorkHistoryListProps>= ({setHeight, animation})=>{ 
     
-    const divHeight = useRef()
+    const divHeight = useRef() as MutableRefObject<HTMLDivElement>
 
     useEffect(()=>{
 

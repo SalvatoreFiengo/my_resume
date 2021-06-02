@@ -1,5 +1,6 @@
-import resume from '../../../resume/Resume.pdf';
 import {personalInfo} from '../../../mock-data/data';
+
+const resume = require('../../../resume/Resume.pdf')
 
 const Presentation = ()=>(
     <div className='mt-3'>

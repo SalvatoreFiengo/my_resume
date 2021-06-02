@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import Header from './components/header/header';
 import CvCard from './components/main/cvCard/cvCard';
 import Presentation from './components/main/cvCard/presentation';
@@ -8,14 +8,15 @@ import Education from './components/main/education/education';
 import WorkHistoryList from './components/main/workHistory/workHistoryList';
 import Footer from './components/footer/footer';
 
-function App() {
+
+const App:FC = () => {
   const [cvPosition,setCvPosition] = useState(0); 
   const [skillPosition,setSkillPosition] = useState(0);
-  const [WorkHistoryPos,setWorkHistoryPos] = useState(0);
-  const [EducationPos,setEducaitonPos] = useState(0)
+  const [workHistoryPos,setWorkHistoryPos] = useState(0);
+  const [educationPos,setEducaitonPos] = useState(0)
   return (
     <div>
-      <Header cvPosition={cvPosition} skillPosition={skillPosition} WorkHistoryPos={WorkHistoryPos} EducationPos={EducationPos}/>
+      <Header cvPosition={cvPosition} skillPosition={skillPosition} workHistoryPos={workHistoryPos} educationPos={educationPos}/>
       <div className='content'>
         <CvCard setCvPosition = {setCvPosition}/>
         <Presentation/>

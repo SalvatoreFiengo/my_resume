@@ -1,21 +1,27 @@
-import {useState, useEffect, useRef} from 'react';
+import {FC, MutableRefObject, useState, useEffect, useRef} from 'react';
 import {personalInfo, linksAndEdu} from '../../../mock-data/data';
 
-const CvCard = ({setCvPosition})=>{
+type CvCardProps = {
+    setCvPosition: (spyscroll:number)=>void
+}
+const CvCard:FC<CvCardProps>= ({setCvPosition})=>{
     
     const [time,gettime]= useState('Good morning')
     
-    const spyScroll = useRef();
+    const spyScroll = useRef() as MutableRefObject<HTMLDivElement>;
     const handleSpyScroll = ()=>{
-        setCvPosition(spyScroll.current.offsetTop);
+        const position:number = spyScroll.current.offsetTop;
+        if(position){
+            setCvPosition(position);
+        } 
     }
 
     useEffect(()=>{
         gettime(()=>{
-            const nowTime = parseInt(new Date().getHours());
-            if(nowTime<12){
+            const hours:number = new Date().getHours();
+            if(hours<12){
                 return 'Good Morning'
-            }else if(nowTime <19){
+            }else if(hours <19){
                 return 'Good Afternoon'
             }else{
                 return 'Good Evening'

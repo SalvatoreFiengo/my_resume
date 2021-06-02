@@ -1,12 +1,18 @@
-import {useState, useEffect, useRef} from 'react';
+import { FC, useState, useEffect, useRef, MutableRefObject, ElementType } from 'react';
 import Svg from './svg/svg';
 
-const InfoSection = ({setPos, list:List, text})=>{
+type InfoSectionProps = {
+    setPos:(value:number)=>void,
+    list: ElementType,
+    text: string
+}
+
+const InfoSection:FC<InfoSectionProps> = ({setPos, list:List, text})=>{
 
     const [height, setHeight] = useState(100)
     const [animation, toggleAnimation] = useState(false)
     
-    const spyScroll = useRef();
+    const spyScroll = useRef() as MutableRefObject<HTMLDivElement>;
     
     const handleSpyScroll = ()=>{
         setPos(spyScroll.current.offsetTop);

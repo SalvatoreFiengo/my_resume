@@ -1,4 +1,10 @@
-const Svg=({height, animation})=>(
+import { FC } from 'react';
+
+type SvgProps = {
+    height: number;
+    animation: Boolean;
+}
+const Svg:FC<SvgProps>=({height, animation})=>(
     <div className={['svg-position', animation?'animated-svg': null].join(' ')}>
         <svg 
             width="100%" 

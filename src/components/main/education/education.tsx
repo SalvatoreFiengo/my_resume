@@ -1,8 +1,12 @@
-import { useRef, useEffect } from 'react';
+import { FC, useRef, useEffect, MutableRefObject } from 'react';
 import { linksAndEdu } from '../../../mock-data/data';
 
-const Education = ({setHeight, animation})=>{
-    const divHeight = useRef();
+type EducationProps = {
+    setHeight:(value:number)=>void,
+    animation:Boolean
+}
+const Education: FC<EducationProps> = ({setHeight, animation})=>{
+    const divHeight = useRef() as MutableRefObject<HTMLDivElement>;
 
     const certHtmlData = ()=>{return {__html: linksAndEdu.cert.certdata}}
 

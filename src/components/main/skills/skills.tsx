@@ -1,11 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { FC, MutableRefObject, useEffect, useRef } from 'react';
 import SkillList from './skillList'
 import {cardTitles,frontEnd,backEnd,game} from '../../../mock-data/data';
 
-const Skills = ({setSkillPosition})=>{
-    const spyScroll = useRef();
+type SkillsProp= {
+    setSkillPosition: (pos:number)=>void
+}
+const Skills:FC<SkillsProp> = ({setSkillPosition})=>{
+    const spyScroll = useRef()as MutableRefObject<HTMLDivElement>;
     const handleSpyScroll = ()=>{
-        setSkillPosition(spyScroll.current.offsetTop);
+        const pos = spyScroll.current.offsetTop
+        setSkillPosition(pos);
     };
     useEffect(handleSpyScroll);
     
