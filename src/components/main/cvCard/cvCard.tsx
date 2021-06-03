@@ -1,47 +1,53 @@
-import {FC, MutableRefObject, useState, useEffect, useRef} from 'react';
-import {personalInfo, linksAndEdu} from '../../../mock-data/data';
+import { FC, MutableRefObject, useState, useEffect, useRef } from 'react';
+import { personalInfo, linksAndEdu } from '../../../mock-data/data';
 
 type CvCardProps = {
     setCvPosition: (spyscroll:number)=>void
-}
+};
+
 const CvCard:FC<CvCardProps>= ({setCvPosition})=>{
     
-    const [time,gettime]= useState('Good morning')
-    
+    const [time,gettime]= useState('Good morning');   
     const spyScroll = useRef() as MutableRefObject<HTMLDivElement>;
+
     const handleSpyScroll = ()=>{
         const position:number = spyScroll.current.offsetTop;
         if(position){
             setCvPosition(position);
         } 
-    }
+    };
 
     useEffect(()=>{
         gettime(()=>{
             const hours:number = new Date().getHours();
+
             if(hours<12){
                 return 'Good Morning'
             }else if(hours <19){
                 return 'Good Afternoon'
             }else{
                 return 'Good Evening'
-            }
-        })
+            };
+        });
     },[time])
 
-    useEffect(handleSpyScroll)
+    useEffect(handleSpyScroll);
 
     return(
         <div ref={spyScroll} className='card mx-auto mb-5 cv-card-shadow custom-card animated'>
             <div className='card-body'>
                 <div className='row'>
                     <div className='col-12 col-lg-6 col-xl-4'>
-                        <img className='w-100 d-block profile-img ps-3' src='https://media-exp1.licdn.com/dms/image/C5603AQHUrpA5rZ0-pA/profile-displayphoto-shrink_200_200/0/1550091903426?e=1625097600&v=beta&t=d-W-EDMy0rn1y-i4OIwIue8-mjbF6MtrUqfxY_Yf2xk' alt='Salvatore Fiengo'></img>
+                        <img 
+                            className='w-100 d-block profile-img ps-3' 
+                            src={ personalInfo[0].linkedinPicLink } 
+                            alt='Salvatore Fiengo'>
+                        </img>
                     </div> 
                     <div className='col-12 col-lg-6 col-xl-8'>
                         <div className='profile mb-2 mt-3'>
-                            <h1 className='profile-title mt-2 mb-2'><p>{time}</p><span>I'm</span> {personalInfo[0].name}</h1>
-                            <p className='mb-2'> {personalInfo[0].role}</p>
+                            <h1 className='profile-title mt-2 mb-2'><p>{ time }</p><span>I'm</span> { personalInfo[0].name }</h1>
+                            <p className='mb-2'> { personalInfo[0].role }</p>
                         </div>
                         <div className=''>
                             <ul className='profile-list '>
@@ -51,7 +57,7 @@ const CvCard:FC<CvCardProps>= ({setCvPosition})=>{
                                             <p>Address</p>
                                         </div>
                                         <div className='col-12 col-lg-9'>
-                                            <p className='detail'> {personalInfo[0].address}</p>
+                                            <p className='detail'> { personalInfo[0].address }</p>
                                         </div>
                                     </div>
                                 </li>
@@ -61,7 +67,7 @@ const CvCard:FC<CvCardProps>= ({setCvPosition})=>{
                                             <p>Email</p>
                                         </div>
                                         <div className='col-12 col-lg-9'>
-                                            <p className='detail'> {personalInfo[0].email}</p>
+                                            <p className='detail'> { personalInfo[0].email }</p>
                                         </div>
                                     </div>
                                 </li>
@@ -71,7 +77,7 @@ const CvCard:FC<CvCardProps>= ({setCvPosition})=>{
                                             <p>Phone</p>
                                         </div>
                                         <div className='col-12 col-lg-9'>
-                                            <p className='detail'> {personalInfo[0].phone}</p> 
+                                            <p className='detail'> { personalInfo[0].phone }</p> 
                                         </div>
                                     </div>
                                 </li>

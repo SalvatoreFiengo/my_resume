@@ -9,11 +9,11 @@ type ChildProps = {
     educationPos: number
 }
 
-const Header: FC<ChildProps>= ({cvPosition, skillPosition, workHistoryPos, educationPos})=>{
+const Header: FC<ChildProps>= ( { cvPosition, skillPosition, workHistoryPos, educationPos } ) => {
     return(
         <div className='header mb-5'>
-            <Navbar cvPosition={cvPosition} skillPosition={skillPosition} workHistoryPos={workHistoryPos} educationPos={educationPos}/>
-            <div className='header-img' style={{backgroundImage:`url(${Background})`}}>
+            <Navbar cvPosition={ cvPosition } skillPosition={ skillPosition } workHistoryPos={ workHistoryPos } educationPos={ educationPos }/>
+            <div className='header-img' style={ { backgroundImage: `url(${Background})`} }>
             </div>
         </div>
     )

@@ -2,15 +2,15 @@ import { FC, useState, useEffect, useRef, MutableRefObject, ElementType } from '
 import Svg from './svg/svg';
 
 type InfoSectionProps = {
-    setPos:(value:number)=>void,
-    list: ElementType,
-    text: string
+    setPos : ( value:number )=> void,
+    list : ElementType,
+    text : string
 }
 
 const InfoSection:FC<InfoSectionProps> = ({setPos, list:List, text})=>{
 
-    const [height, setHeight] = useState(100)
-    const [animation, toggleAnimation] = useState(false)
+    const [height, setHeight] = useState(100);
+    const [animation, toggleAnimation] = useState(false);
     
     const spyScroll = useRef() as MutableRefObject<HTMLDivElement>;
     
@@ -23,12 +23,13 @@ const InfoSection:FC<InfoSectionProps> = ({setPos, list:List, text})=>{
     useEffect(()=>{
         const topPosition = spyScroll.current.getBoundingClientRect().top;
         const handleAnimationEffectOnScroll = ()=>{
-            const scrollPosition = window.scrollY + window.innerHeight
-            if(topPosition < scrollPosition){
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            if( topPosition < scrollPosition ){
                 toggleAnimation(true);
-            }else if(topPosition > scrollPosition){
+            }else if( topPosition > scrollPosition ){
                 toggleAnimation(false);
-            }          
+            };          
         };
 
         window.addEventListener('scroll',handleAnimationEffectOnScroll);
@@ -36,13 +37,13 @@ const InfoSection:FC<InfoSectionProps> = ({setPos, list:List, text})=>{
     },[]);
 
     return(
-        <div ref={spyScroll} className='mt-5 mb-lg-3'>
+        <div ref={ spyScroll } className='mt-5 mb-lg-3'>
             <h3 className='text-center'>
-                {text}
+                { text }
             </h3>
             <div className='custom-card mx-auto'>
-                <Svg height={height} animation={animation}/>
-                <List setHeight={setHeight} animation={animation}/>
+                <Svg height={ height } animation={ animation }/>
+                <List setHeight={ setHeight } animation={ animation }/>
             </div>
         </div>
         

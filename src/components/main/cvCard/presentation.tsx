@@ -1,15 +1,15 @@
-import {personalInfo} from '../../../mock-data/data';
+import { personalInfo } from '../../../mock-data/data';
 
 const resume = require('../../../resume/Resume.pdf')
 
 const Presentation = ()=>(
     <div className='mt-3'>
         <div className='text-center'>
-            <a className='btn btn-primary text-light' href={resume} download>Download Resume</a>
+            <a className='btn btn-primary text-light' href={ resume } download>Download Resume</a>
         </div>
         <div className='custom-card mx-auto mt-5'>
             <p>
-                {personalInfo[0].presentation}
+                { personalInfo[0].presentation }
             </p>
         </div>
     </div>

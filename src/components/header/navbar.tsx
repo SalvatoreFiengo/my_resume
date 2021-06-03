@@ -1,4 +1,4 @@
-import {FC, MouseEvent, useState, useEffect} from 'react'
+import { FC, MouseEvent, useState, useEffect } from 'react'
 
 type ChildProps = {
     cvPosition: number,
@@ -7,14 +7,14 @@ type ChildProps = {
     educationPos: number
 }
 
-const Navbar:FC<ChildProps> = ({cvPosition, skillPosition,workHistoryPos, educationPos})=>{
+const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educationPos })=>{
     const [mobileNavDisplay, setMobileNavDisplay] = useState('d-none')
     const [navBackground, setNabBackground] = useState('nav-relative bg-transparent')
     const [pos,setPos]=useState(0);
 
-    const handleNavButton = (e:MouseEvent<HTMLButtonElement>)=>{
-        e.preventDefault()
-        mobileNavDisplay==='d-none'?setMobileNavDisplay('d-block'):setMobileNavDisplay('d-none')
+    const handleNavButton = (e: MouseEvent<HTMLButtonElement>)=>{
+        e.preventDefault();
+        mobileNavDisplay === 'd-none'? setMobileNavDisplay('d-block') : setMobileNavDisplay('d-none');
     };
     
     const handleSpyScroll = ()=>{
@@ -38,19 +38,19 @@ const Navbar:FC<ChildProps> = ({cvPosition, skillPosition,workHistoryPos, educat
         };
         setMobileNavDisplay('d-none');
     }
-        setPos(0)
+        setPos(0);
     };
 
     useEffect(()=>{
         const handleNavBackgroundChange = ()=>{
             if(window.pageYOffset>25){
-                setNabBackground('fixed-top text-dimgrey')
+                setNabBackground('fixed-top text-dimgrey');
             }else{
-                setNabBackground('nav-relative bg-transparent')
+                setNabBackground('nav-relative bg-transparent');
             }
         }
-        window.addEventListener('scroll',handleNavBackgroundChange)
-        return ()=>window.removeEventListener('scroll',handleNavBackgroundChange)
+        window.addEventListener('scroll',handleNavBackgroundChange);
+        return ()=>window.removeEventListener('scroll',handleNavBackgroundChange);
     },[]);
 
     useEffect(handleSpyScroll);

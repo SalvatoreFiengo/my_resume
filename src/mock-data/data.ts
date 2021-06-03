@@ -11,7 +11,8 @@ export const personalInfo = [
         phone:'+353(0)834320505',
         presentation: `Graduated Web Developer with Diploma in Full Stack Software Development and Python certified (MS),
                 offering enthusiasm and understanding of various programming languages. 
-                In current role,further programming experience gathered while developing a leave tracker desktop app.`
+                In current role,further programming experience gathered while developing a leave tracker desktop app.`,
+        linkedinPicLink:'https://media-exp1.licdn.com/dms/image/C5603AQHUrpA5rZ0-pA/profile-displayphoto-shrink_200_200/0/1550091903426?e=1625097600&v=beta&t=d-W-EDMy0rn1y-i4OIwIue8-mjbF6MtrUqfxY_Yf2xk' 
         }
     ]
 export const linksAndEdu = {
