@@ -1,9 +1,10 @@
 import { FC, useRef, useEffect, MutableRefObject } from 'react';
 import { linksAndEdu } from '../../../mock-data/data';
-
+import { EducationCard } from '../../../styles/styles';
+ 
 type EducationProps = {
     setHeight:(value: number) => void,
-    animation: Boolean
+    animation: boolean
 }
 const Education: FC<EducationProps> = ( { setHeight, animation } )=>{
     const divHeight = useRef() as MutableRefObject<HTMLDivElement>;
@@ -25,7 +26,7 @@ const Education: FC<EducationProps> = ( { setHeight, animation } )=>{
     return(
         <div ref={ divHeight } className='row'>
             <div className='col-12 col-md-6'>
-                <div className={ ['card description-border-top cv-card-shadow mt-md-3 me-md-3 arrow-right', animatedLeft].join(' ') }>
+                <EducationCard className={ ['card mt-md-3 me-md-3 arrow-right', animatedLeft].join(' ') }>
                     <div className='card-body'>
                         <div className='row'>
                             <div className='col-12 col-md-4'>
@@ -59,10 +60,10 @@ const Education: FC<EducationProps> = ( { setHeight, animation } )=>{
                             </div>
                         </div>
                     </div>
-                </div>
+                </EducationCard>
             </div>
             <div className='col-12 col-md-6'>
-                <div className={ ['card description-border-top cv-card-shadow mt-3 mt-md-5 ms-md-3  arrow-left', animatedRight].join(' ') }>
+                <EducationCard className={ ['card mt-3 mt-md-5 ms-md-3 arrow-left', animatedRight].join(' ') }>
                     <div className='card-body'>
                         <div className='row'>
                             <div className='col-12 col-md-5'>
@@ -87,7 +88,7 @@ const Education: FC<EducationProps> = ( { setHeight, animation } )=>{
                             </div>
                         </div>
                     </div>
-                </div>
+                </EducationCard>
             </div>
         </div>
     );

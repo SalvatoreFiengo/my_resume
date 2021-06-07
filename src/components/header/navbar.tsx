@@ -1,6 +1,5 @@
 import { FC, MouseEvent, useState, useEffect } from 'react'
-import { keyframes } from 'styled-components';
-import styled from 'styled-components';
+import { Nav, NavList, ButtonLink } from '../../styles/styles'
 
 type ChildProps = {
     cvPosition: number,
@@ -91,110 +90,6 @@ const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educa
     )
 };
 
-const showUp = keyframes`
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
-`
-const ButtonLink = styled.button`
-    border: none;
-    background-color: inherit;
-    width: 100%;
-
-    @media screen and (min-width:768px){
-        width: auto;
-    }
-`
-
-const Nav = styled.nav`
-    opacity: 1;
-    animation: ${showUp} 1.5s normal;
-    &.fixed-top{
-        background-color: #63a184;
-        outline: 1px solid #242832;
-        outline-offset: -1px;
-        button {
-            color: #fff;
-            background-color: transparent;
-            &:hover{
-                background-color: #efefef;
-                color: #242832; 
-            }
-        }
-        & ul {
-            background-color: #63a184;
-            border:1px solid #242832;
-            border-top:0;
-
-        }
-    }
-    &.nav-relative{
-        z-index: 2;
-        position: relative;
-        button {
-            color: #fff;
-            background-color: transparent;
-            &:hover{
-                background-color: #63a184;
-                color: #242832;
-            }
-        }
-        & ul{
-            background-color: #efefef !important;
-            border:1px solid #fff;
-            button {
-                color: #242832; 
-                &:hover{
-                    background-color: #63a184;
-                    color: #fff;
-                }
-            }
-        }
-        
-    }
-    @media screen and (min-width:768px){
-        &.fixed-top{
-            & ul {
-                background-color: #63a184;
-                border:0;
-            }
-        }
-        &.nav-relative{
-            z-index: 2;
-            position: relative;
-                & ul{
-                    background-color: transparent !important;
-                    border:0;
-                    button {
-                        color: #fff;
-                        &:hover {
-                            color: #242832;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-`
-const NavList = styled.ul`
-    list-style: none;
-    padding: 0;
-    position: absolute;
-    right: 1rem;
-    z-index: 2;
-    box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-
-    @media screen and (min-width:768px){
-        position: initial;
-        display: block;
-        float: right;
-        box-shadow: unset;
-        border: 0;
-        border-radius: unset;
-    }
-`
 
 
 export default Navbar;

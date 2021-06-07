@@ -1,5 +1,6 @@
 import { FC, useState, useEffect, useRef, MutableRefObject, ElementType } from 'react';
 import Svg from './svg/svg';
+import { CustomCard } from '../../styles/styles';
 
 type InfoSectionProps = {
     setPos : ( value:number )=> void,
@@ -41,10 +42,10 @@ const InfoSection:FC<InfoSectionProps> = ({setPos, list:List, text})=>{
             <h3 className='text-center'>
                 { text }
             </h3>
-            <div className='custom-card mx-auto'>
+            <CustomCard className='mx-auto'>
                 <Svg height={ height } animation={ animation }/>
                 <List setHeight={ setHeight } animation={ animation }/>
-            </div>
+            </CustomCard>
         </div>
         
     );

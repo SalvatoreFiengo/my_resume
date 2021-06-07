@@ -18,35 +18,6 @@ a {
   text-decoration: none;
 }
 
-.header {
-  padding-bottom: 20px;
-  position: relative;
-  height: 58px;
-}
-
-/* .header-img {
-  height: 415px;
-  background-size: cover;
-  background-color: #242832;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-} */
-
-/* .header-img:before{
-  content: '';
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: rgba(44, 51, 64, 0.7);
-} */
-
 .custom-card {
   max-width: 960px;
   width: 75%;
@@ -66,64 +37,6 @@ a {
 
 .cv-card-shadow{
   box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
-}
-
-.profile {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-.profile > p {
-  line-height: 0.8;
-}
-
-.profile-img {
-  max-width: 200px;
-}
-
-
-.profile-title > span{
-  font-weight: lighter;
-}
-
-.profile-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.profile-list p:not(.detail) {
-  display: block;
-  width: 120px;
-  float: left;
-  color: #333333;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 20px;
-  text-transform: uppercase;
-  margin: 0;
-}
-.profile-list .detail {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #9da0a7;
-}
-.card-footer {
-  margin-left: -1px;
-  margin-right: -1px;
-  margin-bottom: -1px;
-  padding: 0;
-}
-
-.social i.fa{
-  height: 2.2rem;
-  width: 2.2rem;
-}
-
-.social i.fa:hover{
-  border-radius: 50%;
-  background-color: #63a184;
-  line-height: 1.1;
 }
 
 .content {
@@ -163,11 +76,11 @@ a {
   color:#fff;
 }
 
-.description-border-top {
+/* .description-border-top {
 
   border-top: 4px solid #198754;
   color:#757575;
-}
+} */
 
 .job-text-list{
   list-style: square;
@@ -214,36 +127,6 @@ a {
 
 @keyframes progressBar{
   0%{width: 5%;}
-}
-
-@-webkit-keyframes showUp {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes showUp {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@-webkit-keyframes showUpLeft {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes showUpLeft {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@-webkit-keyframes showUpRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes showUpRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
 }
 
 @-webkit-keyframes svg-animation {

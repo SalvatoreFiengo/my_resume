@@ -1,6 +1,7 @@
 import { FC, MutableRefObject, useEffect, useRef } from 'react';
 import SkillList from './skillList'
-import {cardTitles,frontEnd,backEnd,game} from '../../../mock-data/data';
+import { cardTitles, frontEnd, backEnd, game } from '../../../mock-data/data';
+import { CustomCardAnimated, Animated } from '../../../styles/styles';
 
 type SkillsProp= {
     setSkillPosition: (pos:number)=>void
@@ -16,9 +17,9 @@ const Skills:FC<SkillsProp> = ({ setSkillPosition })=>{
     useEffect(handleSpyScroll);
     
     return(
-        <div ref={ spyScroll } className='animated'>
+        <Animated ref={ spyScroll }>
             <h3 className='text-center mt-5 mb-3'>Programming Skills</h3>
-            <div className='card mx-auto custom-card cv-card-shadow'>
+            <CustomCardAnimated className='card mx-auto'>
                 <div className='card-body'>
                     
                     <div className='row flex-column flex-md-row'>
@@ -35,8 +36,8 @@ const Skills:FC<SkillsProp> = ({ setSkillPosition })=>{
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </CustomCardAnimated>
+        </Animated>
         
     )
 };

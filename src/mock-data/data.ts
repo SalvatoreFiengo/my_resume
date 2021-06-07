@@ -32,6 +32,7 @@ export const linksAndEdu = {
         place:'Dublin, Dublin Co.',
         description:['Introduction to Programming Using Python','Skills and knowledge to recognize and write syntactically correct Python code, recognize data types supported by Python and the ability to recognize and write Python code that will logically solve a given problem.'],
         certdata:`<div data-iframe-width="120" data-iframe-height="250" data-share-badge-id="da6eb3c2-2569-4c79-8881-85e821879690" data-share-badge-host="https://www.credly.com"></div>`,
+        imgSrc:''
 
     }
 }

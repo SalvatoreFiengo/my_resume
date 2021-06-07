@@ -1,4 +1,5 @@
 import { personalInfo } from '../../../mock-data/data';
+import { CustomCard } from '../../../styles/styles';
 
 const resume = require('../../../resume/Resume.pdf')
 
@@ -7,11 +8,11 @@ const Presentation = ()=>(
         <div className='text-center'>
             <a className='btn btn-primary text-light' href={ resume } download>Download Resume</a>
         </div>
-        <div className='custom-card mx-auto mt-5'>
+        <CustomCard className='mx-auto mt-5'>
             <p>
                 { personalInfo[0].presentation }
             </p>
-        </div>
+        </CustomCard>
     </div>
 );
 export default Presentation;
