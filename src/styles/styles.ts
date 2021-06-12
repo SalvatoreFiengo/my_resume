@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { keyframes, css } from 'styled-components';
 import styled from 'styled-components';
 /* animations */
 
@@ -218,45 +218,41 @@ export const CardFooter = styled.div`
     }
 `
 /* Education styles */
-export const EducationCard = styled.div`
+type EducationWrapperProps = {
+    animation : boolean,
+    direction : string
+}
+
+const animationBasedOnDirection = css`
+    margin-top: ${(props: EducationWrapperProps) => props.direction === 'left'?'3rem;':'5rem;'}
+    margin-left: ${(props: EducationWrapperProps) => props.direction === 'right'?'1rem;':'auto;'}
+    margin-right: ${(props: EducationWrapperProps) => props.direction === 'left'?'1rem;':'auto;'}
+    ${(props: EducationWrapperProps) => props.animation?css`
+    opacity: 1;
+    animation: ${(props: EducationWrapperProps) => props.direction === 'left'? showUpLeft : showUpRight} 1s normal;
+    `: ''}
+
+    &:after{
+        content: " ";
+        position: absolute;
+        right: ${(props: EducationWrapperProps) => props.direction === 'left'?'-15px;':'auto;'}
+        left: ${(props: EducationWrapperProps) => props.direction === 'right'?'-15px;':'auto;'}
+        top: 15px;
+        border-top: 15px solid transparent;
+        border-right: ${(props: EducationWrapperProps) => props.direction === 'left'?'none;':'15px solid #fff;'}
+        border-left: ${(props: EducationWrapperProps) => props.direction === 'left'?'15px solid #fff;':'none;'}
+        border-bottom: 15px solid transparent;
+    }
+
+}
+`
+export const EducationWrapper = styled.div`
     border-top: 4px solid #198754;
     color:#757575;
     box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
-
+    margin-top: 1rem;
     @media screen and (min-width:768px){
-        &.arrow-right {
-            :after{
-                content: " ";
-                position: absolute;
-                right: -15px;
-                top: 15px;
-                border-top: 15px solid transparent;
-                border-right: none;
-                border-left: 15px solid #fff;
-                border-bottom: 15px solid transparent;
-
-            }
-        }
-        &.arrow-left{
-            :after{
-                content: " ";
-                position: absolute;
-                left: -15px;
-                top: 15px;
-                border-top: 15px solid transparent;
-                border-right: 15px solid #fff;
-                border-left: none;
-                border-bottom: 15px solid transparent; 
-            }
-        }
-        &.animated-left-item {
-            opacity: 1;
-            animation: ${showUpLeft} 1s normal;  
-          }
-        &.animated-right-item {
-            opacity: 1;
-            animation: ${showUpRight} 1s normal;  
-        }
+        ${animationBasedOnDirection}
     }
 `
 

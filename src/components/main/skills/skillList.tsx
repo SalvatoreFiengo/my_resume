@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 type SkillListProps = {
     cardTitle: string,
-    skills:Array<{ name:string, value?:string|undefined }>
+    skills: Array<{ name:string, value?:string|undefined }>
 }
 const SkillList:FC<SkillListProps> = ( props )=>{
     const skillPercent = ( value: string|undefined )=>({ width: value+'%' });

@@ -1,6 +1,5 @@
 import { FC, useRef, useEffect, MutableRefObject } from 'react';
-import { linksAndEdu } from '../../../mock-data/data';
-import { EducationCard } from '../../../styles/styles';
+import  EducationCard  from './educationCard';
  
 type EducationProps = {
     setHeight:(value: number) => void,
@@ -8,11 +7,6 @@ type EducationProps = {
 }
 const Education: FC<EducationProps> = ( { setHeight, animation } )=>{
     const divHeight = useRef() as MutableRefObject<HTMLDivElement>;
-
-    const certHtmlData = () => ( { __html: linksAndEdu.cert.certdata } )
-
-    const animatedLeft = animation? 'animated-left-item' : null;
-    const animatedRight = animation? 'animated-right-item' : null;
 
     useEffect(()=>{
         const svgHeightHandler = ()=>{
@@ -26,69 +20,10 @@ const Education: FC<EducationProps> = ( { setHeight, animation } )=>{
     return(
         <div ref={ divHeight } className='row'>
             <div className='col-12 col-md-6'>
-                <EducationCard className={ ['card mt-md-3 me-md-3 arrow-right', animatedLeft].join(' ') }>
-                    <div className='card-body'>
-                        <div className='row'>
-                            <div className='col-12 col-md-4'>
-                                <a
-                                    href={ linksAndEdu.college.certdata } 
-                                    target='_blank' 
-                                    rel='noreferrer'>
-                                    <img 
-                                        className='' 
-                                        src={ linksAndEdu.college.imgSrc } 
-                                        alt='code institute'>
-                                    </img>
-                                </a>
-                            </div>
-                            <div className='col-12 col-md-8'>
-                                <h5 className='card-title border-bottom border-dark pb-3 mb-0'>{ linksAndEdu.college.name }</h5>
-                                <div className='row mb-3'>
-                                    <div className='col-12 col-md-7'>
-                                        <small className=''>{ linksAndEdu.college.place }</small>
-                                    </div>
-                                    <div className='col-12 col-md-5'>
-                                        <small className='text-muted date'>{ linksAndEdu.college.date }</small>
-                                    </div>
-                                </div>
-                                <div className='card-text'>
-                                    {linksAndEdu.college.description.map(( description, i ) => (
-                                        <p key={ i } className='text-item'>{ description }</p>
-                                    ))}
-                                    <div className='d-none d-md-block circle left'></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </EducationCard>
+                <EducationCard animation = {animation} direction = 'left'/>
             </div>
             <div className='col-12 col-md-6'>
-                <EducationCard className={ ['card mt-3 mt-md-5 ms-md-3 arrow-left', animatedRight].join(' ') }>
-                    <div className='card-body'>
-                        <div className='row'>
-                            <div className='col-12 col-md-5'>
-                                <div dangerouslySetInnerHTML={ certHtmlData() }></div>
-                            </div>
-                            <div className='col-12 col-md-7'>
-                                <h5 className='card-title border-bottom border-dark pb-3 mb-0'>{ linksAndEdu.cert.name }</h5>
-                                <div className='row mb-3'>
-                                    <div className='col-12 col-md-7'>
-                                        <small className=''>{ linksAndEdu.cert.place }</small>
-                                    </div>
-                                    <div className='col-12 col-md-5'>
-                                        <small className='text-muted date'>{ linksAndEdu.cert.date }</small>
-                                    </div>
-                                </div>
-                                <div className='card-text'>
-                                    { linksAndEdu.cert.description.map(( description, i ) => (
-                                        <p key={ i } className='text-item'>{ description }</p>
-                                    )) }
-                                    <div className='d-none d-md-block circle right'></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </EducationCard>
+                <EducationCard animation = {animation} direction = 'right'/>
             </div>
         </div>
     );
