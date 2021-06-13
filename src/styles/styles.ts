@@ -246,7 +246,7 @@ const animationBasedOnDirection = css`
 
 }
 `
-export const EducationWrapper = styled.div`
+export const EducationWrapper = styled(Animated)`
     border-top: 4px solid #198754;
     color:#757575;
     box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);

@@ -16,7 +16,6 @@ const Job: FC<JobProps> = ({ data, index, animation })=>{
     const leftRightMarginAndArrow= index%2===0? 'me-md-3 mt-3 arrow-right' : 'ms-md-3 mt-3 mt-md-5 arrow-left';
 
     const animated = ()=>{
-        console.log('job',animation)
         if( animation ){
             
             if( index%2===0 ){

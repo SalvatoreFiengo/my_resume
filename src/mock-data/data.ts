@@ -47,7 +47,7 @@ export const jobs = [
                 'Created support documentation that empowered user community to extend skills and find solutions to questions without help from seniors and team leaders.'
             ]           
         ,
-        date: '06/2020 - current'
+        date: '07/2020 - current'
     },
     {
         id:'1',
@@ -60,7 +60,7 @@ export const jobs = [
             'Increased customer satisfaction by resolving billing issues.',
             'Awarded best collector year 2018',            
         ],
-        date: '06/2020 - current'
+        date: '09/2016 - 07/2020'
     },
     {
         id:'2',
@@ -69,7 +69,7 @@ export const jobs = [
         description: [
             'Devised solutions to operations issues related to vary systems including Office365 and OS Windows',
             'working closely via phone,email and web teleconference.',
-            'Assessed systemhardwareandsoftwareandsuggestedmodificationstoreduce lagtimeandimproveoverallspeed.',
+            'Assessed system hardware and software and suggested modifications to reduce lag time and improve overall speed.',
             'Documented all transactions and support interactions in system for future reference.',
             'Explained technical information in clear terms to non-technical individuals to promote betterunderstanding.',
             'Quality rate: over95%'           
