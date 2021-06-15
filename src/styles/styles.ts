@@ -224,9 +224,9 @@ type EducationWrapperProps = {
 }
 
 const animationBasedOnDirection = css`
-    margin-top: ${(props: EducationWrapperProps) => props.direction === 'left'?'3rem;':'5rem;'}
-    margin-left: ${(props: EducationWrapperProps) => props.direction === 'right'?'1rem;':'auto;'}
-    margin-right: ${(props: EducationWrapperProps) => props.direction === 'left'?'1rem;':'auto;'}
+    margin-top: ${ (props: EducationWrapperProps) => props.direction === 'left'?' 3rem;' : '5rem;' }
+    margin-left: ${ (props: EducationWrapperProps) => props.direction === 'right'? '1rem;' : 'auto;' }
+    margin-right: ${ (props: EducationWrapperProps) => props.direction === 'left'?' 1rem;' : 'auto;' }
     ${(props: EducationWrapperProps) => props.animation?css`
     opacity: 1;
     animation: ${(props: EducationWrapperProps) => props.direction === 'left'? showUpLeft : showUpRight} 1s normal;
@@ -269,4 +269,4 @@ export const CustomCard = styled.div`
     width: 75%;
 `
 
-/**to finish education */
+/* Work History */

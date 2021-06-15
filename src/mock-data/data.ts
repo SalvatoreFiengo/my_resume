@@ -1,7 +1,6 @@
 export const cardTitles = ['Front-end', 'Back-end', 'Game'];
-export const frontEnd = [{name:'Javascript', value:'85'}, {name:'React',value:'60'}, {name:'CSS3',value:'90'}, {name:'HTML5',value:'100'}, {name:'Bootstrap',value:'80'}];
+export const frontEnd = [{name:'HTML5', value:'90'},{name:'CSS3', value:'90'},{name:'Javascript', value:'85'}, {name:'jQuery', value:'80'},{name:'React',value:'75'},{name:'TypeScript',value:'65'}, {name:'Bootstrap',value:'85'},{name:'Sass',value:'50'},{name:'Styled-components',value:'50'}];
 export const backEnd = [{name:'Python',value:'85'}, {name:'Django',value:'60'}, {name:'REST api',value:'50'}];
-export const game = [{name:'PyGame',value:'50'}]
 export const personalInfo = [
     {
         name:'Salvatore Fiengo',
@@ -11,7 +10,7 @@ export const personalInfo = [
         phone:'+353(0)834320505',
         presentation: `Graduated Web Developer with Diploma in Full Stack Software Development and Python certified (MS),
                 offering enthusiasm and understanding of various programming languages. 
-                In current role,further programming experience gathered while developing a leave tracker desktop app.`,
+                In current role, further programming experience gathered while developing a leave tracker desktop app.`,
         linkedinPicLink:'https://media-exp1.licdn.com/dms/image/C5603AQHUrpA5rZ0-pA/profile-displayphoto-shrink_200_200/0/1550091903426?e=1625097600&v=beta&t=d-W-EDMy0rn1y-i4OIwIue8-mjbF6MtrUqfxY_Yf2xk' 
         }
     ]

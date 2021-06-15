@@ -28,4 +28,4 @@ const Education: FC<EducationProps> = ( { setHeight, animation } )=>{
         </div>
     );
 };
-export default Education;
+export default Education; 

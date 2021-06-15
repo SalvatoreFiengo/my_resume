@@ -1,6 +1,6 @@
 import { FC, MutableRefObject, useEffect, useRef } from 'react';
 import SkillList from './skillList'
-import { cardTitles, frontEnd, backEnd, game } from '../../../mock-data/data';
+import { cardTitles, frontEnd, backEnd } from '../../../mock-data/data';
 import { CustomCardAnimated, Animated } from '../../../styles/styles';
 
 type SkillsProp= {
@@ -29,10 +29,6 @@ const Skills:FC<SkillsProp> = ({ setSkillPosition })=>{
 
                         <div className='col'>
                             <SkillList cardTitle={ cardTitles[1] } skills={ backEnd }></SkillList>
-                        </div>
-
-                        <div className='col'>
-                            <SkillList cardTitle={ cardTitles[2] } skills={ game }></SkillList>
                         </div>
                     </div>
                 </div>

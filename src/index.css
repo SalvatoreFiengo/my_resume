@@ -44,11 +44,6 @@ a {
   position: relative;
 }
 
-.skill {
-  min-width: 77px;
-  margin: 0;
-}
-
 .fa-linkedin-square{
   color: #0a66c2;
 }
@@ -58,6 +53,7 @@ a {
 
 .progress {
   height: 0.5rem;
+  margin-top:0.5rem;
 }
 
 .progress-bar{
