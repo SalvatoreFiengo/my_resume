@@ -23,10 +23,6 @@ a {
   width: 75%;
 }
 
-.animated, .animated-left-item,.animated-right-item {
-  opacity: 1;
-  animation: showUp 1.5s normal; 
-}
 .animated-svg {
   opacity: 1;
   animation: showUp 4s normal; 

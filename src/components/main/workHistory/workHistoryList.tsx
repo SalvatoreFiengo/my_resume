@@ -4,7 +4,7 @@ import {jobs} from '../../../mock-data/data';
 
 type WorkHistoryListProps = {
     setHeight: (value: number) => void,
-    animation: Boolean
+    animation: boolean
 }
 const WorkHistoryList: FC<WorkHistoryListProps>= ( { setHeight, animation } )=>{ 
     
@@ -13,7 +13,7 @@ const WorkHistoryList: FC<WorkHistoryListProps>= ( { setHeight, animation } )=>{
     useEffect(()=>{
 
         const svgHeightHandler = ()=>{
-            setHeight(divHeight.current.clientHeight - 200)
+            setHeight(divHeight.current.clientHeight - 180)
         };
         svgHeightHandler();
 

@@ -218,39 +218,38 @@ export const CardFooter = styled.div`
     }
 `
 /* Education styles */
-type EducationWrapperProps = {
+type AnimationProps = {
     animation : boolean,
     direction : string
 }
 
 const animationBasedOnDirection = css`
-    margin-top: ${ (props: EducationWrapperProps) => props.direction === 'left'?' 3rem;' : '5rem;' }
-    margin-left: ${ (props: EducationWrapperProps) => props.direction === 'right'? '1rem;' : 'auto;' }
-    margin-right: ${ (props: EducationWrapperProps) => props.direction === 'left'?' 1rem;' : 'auto;' }
-    ${(props: EducationWrapperProps) => props.animation?css`
+    ${(props: AnimationProps) => props.animation?css`
     opacity: 1;
-    animation: ${(props: EducationWrapperProps) => props.direction === 'left'? showUpLeft : showUpRight} 1s normal;
+    animation: ${(props: AnimationProps) => props.direction === 'left'? showUpLeft : showUpRight} 1s normal;
     `: ''}
 
-    &:after{
+    :after{
         content: " ";
         position: absolute;
-        right: ${(props: EducationWrapperProps) => props.direction === 'left'?'-15px;':'auto;'}
-        left: ${(props: EducationWrapperProps) => props.direction === 'right'?'-15px;':'auto;'}
+        right: ${ (props: AnimationProps) => props.direction === 'left'? '-15px;' : 'auto;' }
+        left: ${ (props: AnimationProps) => props.direction === 'right'? '-15px;' : 'auto;' }
         top: 15px;
         border-top: 15px solid transparent;
-        border-right: ${(props: EducationWrapperProps) => props.direction === 'left'?'none;':'15px solid #fff;'}
-        border-left: ${(props: EducationWrapperProps) => props.direction === 'left'?'15px solid #fff;':'none;'}
+        border-right: ${ (props: AnimationProps) => props.direction === 'left'? 'none;' : '15px solid #fff;' }
+        border-left: ${ (props: AnimationProps) => props.direction === 'left'? '15px solid #fff;' : 'none;' }
         border-bottom: 15px solid transparent;
     }
 
 }
 `
 export const EducationWrapper = styled(Animated)`
+    margin-top: ${ (props: AnimationProps) => props.direction === 'left'?' 3rem;' : '5rem;' }
+    margin-left: ${ (props: AnimationProps) => props.direction === 'right'? '1rem;' : 'auto;' }
+    margin-right: ${ (props: AnimationProps) => props.direction === 'left'?' 1rem;' : 'auto;' }
     border-top: 4px solid #198754;
-    color:#757575;
+    color: #757575;
     box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
-    margin-top: 1rem;
     @media screen and (min-width:768px){
         ${animationBasedOnDirection}
     }
@@ -269,4 +268,13 @@ export const CustomCard = styled.div`
     width: 75%;
 `
 
-/* Work History */
+/* Work History -> as accepts animationBasedOnDirection then pass props to component based on odd or even*/
+export const JobWrapper = styled(Animated)`
+    margin-top: 3rem;
+    @media screen and (min-width:768px){
+        margin-right: ${( props: AnimationProps )=> props.direction === 'left'? '1rem;':'auto;'}
+        margin-left: ${( props: AnimationProps )=> props.direction === 'right'? '1rem;':'auto;'}
+        margin-top: ${( props: AnimationProps )=> props.direction === 'right'? '5rem;':'3rem;'}
+        ${animationBasedOnDirection}
+    }
+`

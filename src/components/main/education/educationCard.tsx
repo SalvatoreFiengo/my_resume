@@ -8,8 +8,6 @@ export type EducationProps = {
 };
 const EducationCard:FC<EducationProps> = ({ animation, direction })=>{
 
-    // const left = animation? 'mt-md-3 me-md-3 arrow-right animated-left-item' : 'mt-md-3 me-md-3 arrow-right';
-    // const right = animation? 'mt-md-5 ms-md-3 arrow-left animated-right-item' : 'mt-md-5 ms-md-3 arrow-left';
     const certHtmlData = () => ( { __html: linksAndEdu.cert.certdata } )
 
     const educationData = direction === 'left'? linksAndEdu.college : linksAndEdu.cert; 

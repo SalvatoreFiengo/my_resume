@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { JobWrapper } from '../../../styles/styles';
 
 type JobProps = {
     data:{
@@ -9,27 +10,13 @@ type JobProps = {
         description: string[]
     },
     index: number,
-    animation: Boolean
+    animation: boolean
 } 
 const Job: FC<JobProps> = ({ data, index, animation })=>{
 
-    const leftRightMarginAndArrow= index%2===0? 'me-md-3 mt-3 arrow-right' : 'ms-md-3 mt-3 mt-md-5 arrow-left';
-
-    const animated = ()=>{
-        if( animation ){
-            
-            if( index%2===0 ){
-                return 'animated-left-item';
-            }else{
-                return 'animated-right-item';
-            }
-        };
-    };
-    
-        
     return(
         <div className='col-12 col-md-6' key={ data.id }>
-            <div className={ ['card description-border-top cv-card-shadow', leftRightMarginAndArrow, animated() ].join(' ') }>
+            <JobWrapper animation={animation} direction={ index%2 === 0? 'left' : 'right' } className='card description-border-top cv-card-shadow'>
                 <div className='card-body'>
                     <h5 className='mb-2 text-center'>{ data.name }</h5>
                     <div className='row border-top border-dark m-3'>
@@ -51,7 +38,7 @@ const Job: FC<JobProps> = ({ data, index, animation })=>{
                         <div className={ ['d-none d-md-block circle', index%2===0?'left':'right'].join(' ') }></div>  
                     </div>
                 </div>
-            </div>
+            </JobWrapper>
         </div>
     )
 }
