@@ -11,7 +11,7 @@ type ChildProps = {
 const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educationPos })=>{
     const [mobileNavDisplay, setMobileNavDisplay] = useState('d-none')
     const [navBackground, setNabBackground] = useState('nav-relative bg-transparent')
-    const [pos,setPos]=useState(0);
+    const [pos,setPos] = useState(0);
 
     const handleNavButton = (e: MouseEvent<HTMLButtonElement>)=>{
         e.preventDefault();
@@ -20,6 +20,7 @@ const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educa
     
     const handleSpyScroll = ()=>{
         if (pos){
+            console.log(pos)
         switch(pos){
             case 1:
                 window.scrollTo(0,cvPosition-60);              
@@ -35,6 +36,7 @@ const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educa
                 break;
             default:
                 window.scrollTo(0,0);
+                console.log(pos)
                 break;
         };
         setMobileNavDisplay('d-none');
@@ -61,7 +63,7 @@ const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educa
             <div>
                 <div className='row'>
                     <div className='col-4 col-md-3'>
-                        <ButtonLink className="navbar-brand ms-3 ms-md-5 pt-0" onClick={()=>setPos(0)}>My Resume</ButtonLink>
+                        <ButtonLink className="navbar-brand ms-3 ms-md-5 pt-0" onClick={()=>setPos(5)}>My Resume</ButtonLink>
                     </div>
                     <div className='d-block d-md-none col-8 text-end'>
                         <button className="border mb-1 me-5" type="button" onClick={(e)=>handleNavButton(e)}>
