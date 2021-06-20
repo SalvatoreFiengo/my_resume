@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { JobWrapper } from '../../../styles/styles';
+import { JobWrapper, JobList, Circle } from '../../../styles/styles';
 
 type JobProps = {
     data:{
@@ -16,7 +16,7 @@ const Job: FC<JobProps> = ({ data, index, animation })=>{
 
     return(
         <div className='col-12 col-md-6' key={ data.id }>
-            <JobWrapper animation={animation} direction={ index%2 === 0? 'left' : 'right' } className='card description-border-top cv-card-shadow'>
+            <JobWrapper animation={ animation } direction={ index%2 === 0? 'left' : 'right' } className='card'>
                 <div className='card-body'>
                     <h5 className='mb-2 text-center'>{ data.name }</h5>
                     <div className='row border-top border-dark m-3'>
@@ -28,14 +28,14 @@ const Job: FC<JobProps> = ({ data, index, animation })=>{
                         </div>
                     </div>
                     <div className='card-text m-1'>
-                        <ul className='job-text-list ms-1'>
+                        <JobList className='ms-1'>
                         {data.description.map((description, index)=>(
-                            <li key={ index }><p className='text-item'>{ description }</p>
-                                
+                            <li key={ index }>
+                                <p>{ description }</p>   
                             </li>
                         ))}
-                        </ul>
-                        <div className={ ['d-none d-md-block circle', index%2===0?'left':'right'].join(' ') }></div>  
+                        </JobList>
+                        <Circle direction={ index%2 === 0? 'left' : 'right' } className='d-none d-md-block'></Circle>  
                     </div>
                 </div>
             </JobWrapper>

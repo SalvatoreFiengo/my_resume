@@ -10,7 +10,7 @@ type InfoSectionProps = {
 
 const InfoSection:FC<InfoSectionProps> = ({setPos, list:List, text})=>{
 
-    const [height, setHeight] = useState(100);
+    const [height, setHeight] = useState('100');
     const [animation, toggleAnimation] = useState(false);
     
     const spyScroll = useRef() as MutableRefObject<HTMLDivElement>;
@@ -43,7 +43,7 @@ const InfoSection:FC<InfoSectionProps> = ({setPos, list:List, text})=>{
                 { text }
             </h3>
             <CustomCard className='mx-auto'>
-                <Svg height={ height } animation={ animation }/>
+                <Svg height={ height }/>
                 <List setHeight={ setHeight } animation={ animation }/>
             </CustomCard>
         </div>

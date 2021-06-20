@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { linksAndEdu } from '../../../mock-data/data';
-import { EducationWrapper } from '../../../styles/styles';
+import { EducationWrapper, Circle } from '../../../styles/styles';
 
 export type EducationProps = {
     animation: boolean,
@@ -13,7 +13,7 @@ const EducationCard:FC<EducationProps> = ({ animation, direction })=>{
     const educationData = direction === 'left'? linksAndEdu.college : linksAndEdu.cert; 
 
     return(
-        <EducationWrapper direction = {direction} animation = {animation} className='card'>
+        <EducationWrapper direction= {direction} animation= {animation} className='card'>
             <div className='card-body'>
                 <div className='row'>
                     {direction === 'left'?(
@@ -50,7 +50,7 @@ const EducationCard:FC<EducationProps> = ({ animation, direction })=>{
                             { educationData.description.map(( description, i ) => (
                                 <p key={ i } className='text-item'>{ description }</p>
                             ))}
-                            <div className={['d-none d-md-block circle', direction === 'left'? 'left': 'right'].join(' ')}></div>
+                            <Circle direction={ direction } className='d-none d-md-block'></Circle>
                         </div>
                     </div>
                 </div>

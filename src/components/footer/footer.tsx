@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import { linksAndEdu } from '../../mock-data/data';
+import { FooterWrapper } from '../../styles/styles';
 
 const Footer:FC = () => (
-    <footer className='footer '>
+    <FooterWrapper>
         <div className="attributions">
             <p className='p-0 m-0'>
                 <strong>Attributions:</strong>
@@ -30,13 +31,22 @@ const Footer:FC = () => (
             </p>
         </div>
         <div className='d-flex text-center justify-content-center'>
-            <a className='social me-2 mt-3' href={ linksAndEdu.gitHub } target='_blank' rel='noreferrer' aria-label='Github link here'>
+            <a 
+                className='me-2 mt-3' 
+                href={ linksAndEdu.gitHub } 
+                target='_blank' rel='noreferrer' 
+                aria-label='Github link here'>
                 <i className='fa fa-2x fa-github' aria-hidden='true'></i> 
             </a>
-            <a className='social ms-2 mt-3' href={ linksAndEdu.linkedin } target='_blank' rel="noreferrer" aria-label='Linkedin Profile link here'>
+            <a 
+                className='ms-2 mt-3' 
+                href={ linksAndEdu.linkedin } 
+                target='_blank' 
+                rel="noreferrer" 
+                aria-label='Linkedin Profile link here'>
                 <i className='fa fa-2x fa-linkedin-square' aria-hidden='true'></i>
             </a>
         </div>
-    </footer>
+    </FooterWrapper>
 );
 export default Footer;
