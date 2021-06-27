@@ -3,6 +3,7 @@ import Footer from '../footer/footer';
 
 describe('footer', ()=>{
     it('renders the footer without crashing',()=>{
-        shallow(<Footer/>)
+        const footer = shallow(<Footer/>);
+        expect(footer.getElements()).toMatchSnapshot()
     })
 })

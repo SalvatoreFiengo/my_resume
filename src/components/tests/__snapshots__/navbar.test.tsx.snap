@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navbar renders without crashing 1`] = `
+Array [
+  <Styled(styled.div)
+    className="w-100 pt-2 nav-relative bg-transparent"
+  >
+    <div>
+      <div
+        className="row"
+      >
+        <div
+          className="col-4 col-md-3"
+        >
+          <styled.button
+            className="navbar-brand ms-3 ms-md-5 pt-0"
+            onClick={[Function]}
+          >
+            My Resume
+          </styled.button>
+        </div>
+        <div
+          className="d-block d-md-none col-8 text-end"
+        >
+          <button
+            className="border mb-1 me-5"
+            onClick={[Function]}
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              className="fa fa-2x fa-bars"
+            />
+          </button>
+        </div>
+        <div
+          className="col-4 col-md-7"
+        >
+          <styled.ul
+            className="d-md-inline mr-3 mt-md-2 mb-1 d-none"
+          >
+            <li
+              className="d-md-inline me-md-3"
+            >
+              <styled.button
+                onClick={[Function]}
+              >
+                Presentation
+              </styled.button>
+            </li>
+            <li
+              className="d-md-inline me-md-3"
+            >
+              <styled.button
+                onClick={[Function]}
+              >
+                Skills
+              </styled.button>
+            </li>
+            <li
+              className="d-md-inline me-md-3"
+            >
+              <styled.button
+                onClick={[Function]}
+              >
+                Education
+              </styled.button>
+            </li>
+            <li
+              className="d-md-inline"
+            >
+              <styled.button
+                onClick={[Function]}
+              >
+                Work History
+              </styled.button>
+            </li>
+          </styled.ul>
+        </div>
+      </div>
+    </div>
+  </Styled(styled.div)>,
+]
+`;
