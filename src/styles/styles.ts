@@ -104,8 +104,9 @@ export const ButtonLink = styled.button`
     }
 `
 
-export const Nav = styled(Animated)`
-
+export const Nav = styled.nav`
+    opacity: 1;
+    animation: ${showUp} 1.5s normal;
     &.fixed-top{
         background-color: #63a184;
         outline: 1px solid #242832;

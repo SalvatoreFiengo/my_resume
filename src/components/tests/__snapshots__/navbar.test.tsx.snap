@@ -2,7 +2,7 @@
 
 exports[`navbar renders without crashing 1`] = `
 Array [
-  <Styled(styled.div)
+  <styled.nav
     className="w-100 pt-2 nav-relative bg-transparent"
   >
     <div>
@@ -79,6 +79,6 @@ Array [
         </div>
       </div>
     </div>
-  </Styled(styled.div)>,
+  </styled.nav>,
 ]
 `;

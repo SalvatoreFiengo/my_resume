@@ -20,7 +20,6 @@ const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educa
     
     const handleSpyScroll = ()=>{
         if (pos){
-            console.log(pos)
         switch(pos){
             case 1:
                 window.scrollTo(0,cvPosition-60);              
@@ -36,10 +35,8 @@ const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educa
                 break;
             default:
                 window.scrollTo(0,0);
-                console.log(pos)
                 break;
         };
-        setMobileNavDisplay('d-none');
     }
         setPos(0);
     };
