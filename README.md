@@ -1,8 +1,29 @@
-# Getting Started with Create React App
+# Salvatore Fiengo Resume
 
+My resume webpage.
+Webpage to show my passion for coding, skills and work history.
+
+## Badges:
+
+You can find it here:
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7dfb8e03-0cbb-4d05-a836-709555a76fee/deploy-status)](https://app.netlify.com/sites/salvatorefiengocv/deploys)
+Tests status here:
 [![Build status](https://ci.appveyor.com/api/projects/status/o99xhdu7kndbc0we?svg=true)](https://ci.appveyor.com/project/SalvatoreFiengo/my-resume)
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Frameworks:
+
+This project was developed using:
+- [Create React App](https://github.com/facebook/create-react-app).
+- [TypeScript 4.3.2](https://www.typescriptlang.org/),
+- [Styled-components](https://styled-components.com/),
+- [Jest](https://jestjs.io/),
+- [Enzyme](https://enzymejs.github.io/enzyme/),
+
+## Why
+
+I decided to challange my knowledge and get to learn more about React, Typescript learning also new tools in the process.
+Styled-components, Jest and Enzyme are fairly new to me. 
+Especially testing with Jest and Enzyme has been/is quite challangin mainly because I chose a React functional approach
 
 ## Available Scripts
 
@@ -21,52 +42,5 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

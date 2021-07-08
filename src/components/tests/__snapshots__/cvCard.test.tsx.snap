@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cvCard renders cvCard component without crashing 1`] = `
+Array [
+  <Styled(styled.div)
+    className="card mx-auto mb-5"
+  >
+    <styled.div
+      className="card-body"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-12 col-lg-6 col-xl-4"
+        >
+          <img
+            alt="Salvatore Fiengo"
+            className="w-100 d-block ps-3"
+            src="https://media-exp1.licdn.com/dms/image/C5603AQHUrpA5rZ0-pA/profile-displayphoto-shrink_200_200/0/1550091903426?e=1625097600&v=beta&t=d-W-EDMy0rn1y-i4OIwIue8-mjbF6MtrUqfxY_Yf2xk"
+          />
+        </div>
+        <div
+          className="col-12 col-lg-6 col-xl-8"
+        >
+          <div
+            className="custom-bottom-border mb-2 mt-3"
+          >
+            <h1
+              className="mt-2 mb-2"
+            >
+              <p>
+                Good morning
+              </p>
+              <span>
+                I'm
+              </span>
+               
+              Salvatore Fiengo
+            </h1>
+            <p
+              className="mb-2"
+            >
+               
+              Aspiring Developer
+            </p>
+          </div>
+          <div
+            className=""
+          >
+            <ul
+              className=""
+            >
+              <li>
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-12 col-lg-3"
+                  >
+                    <p>
+                      Address
+                    </p>
+                  </div>
+                  <div
+                    className="col-12 col-lg-9"
+                  >
+                    <p
+                      className="detail"
+                    >
+                       
+                      49 Shandon Mill, Shandon Park, Dublin 7
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-12 col-lg-3"
+                  >
+                    <p>
+                      Email
+                    </p>
+                  </div>
+                  <div
+                    className="col-12 col-lg-9"
+                  >
+                    <p
+                      className="detail"
+                    >
+                       
+                      Sal.fiengo@gmail.com
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-12 col-lg-3"
+                  >
+                    <p>
+                      Phone
+                    </p>
+                  </div>
+                  <div
+                    className="col-12 col-lg-9"
+                  >
+                    <p
+                      className="detail"
+                    >
+                       
+                      +353(0)834320505
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </styled.div>
+    <styled.div
+      className="bg-success text-center d-flex justify-content-center"
+    >
+      <a
+        aria-label="Github link here"
+        className="m-2"
+        href="https://github.com/SalvatoreFiengo/my_resume.git"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-2x fa-github text-white"
+        />
+      </a>
+      <a
+        aria-label="Linkedin Profile link here"
+        className="m-2"
+        href="https://www.linkedin.com/in/salvatorefiengo"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-2x fa-linkedin-square text-white"
+        />
+      </a>
+    </styled.div>
+  </Styled(styled.div)>,
+]
+`;

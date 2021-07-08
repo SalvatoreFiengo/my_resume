@@ -2,7 +2,8 @@
  * @jest-environment jsdom
  */
 
-import { shallow, render, mount } from '../../enzyme';
+import { ReactWrapper } from 'enzyme';
+import { shallow, mount } from '../../enzyme';
 import Navbar from '../header/navbar';
 
 type TestProps = {
@@ -13,14 +14,26 @@ type TestProps = {
 };
 
 describe('navbar', ()=>{
-    it('renders without crashing',()=>{
+    it('renders Navbar component without crashing',()=>{
         const props:TestProps = {cvPosition: 60, skillPosition: 80, workHistoryPos: 100, educationPos: 120};
-        const navbarComponent = shallow(<Navbar {...props}/>);
-        expect(navbarComponent.getElements()).toMatchSnapshot();
-    })
-    it('renders navlist with class d-none in screen sizes over medium breakpoint, d-block when burger menu is clicked',()=>{
+        const navbarShallowComponent = shallow(<Navbar {...props}/>);
+        expect(navbarShallowComponent.getElements()).toMatchSnapshot();
+    });
+
+    let navbarComponent:ReactWrapper<any,Readonly<{}>>;
+
+    beforeEach(()=>{
         const props:TestProps = {cvPosition: 60, skillPosition: 80, workHistoryPos: 100, educationPos: 120};
-        const navbarComponent = mount(<Navbar {...props}/>);
+        navbarComponent = mount(<Navbar {...props}/>);
+    });
+
+    afterEach(()=>{
+        navbarComponent.unmount();
+        jest.clearAllMocks();
+    });
+
+    it('renders navlist only for small screens when burger menu is clicked',()=>{
+
         const navBurgerMenu = navbarComponent.find('button.border');
         const listIsHidden = navbarComponent.find('ul.d-none');
         // before click      
@@ -32,30 +45,33 @@ describe('navbar', ()=>{
         // after click
         const listIsShowing = navbarComponent.find('ul.d-block');
         expect(listIsShowing).toHaveLength(1)
-        navbarComponent.unmount();
-    })
-    it('scrolls to a specific seciton when nav button is clicked',()=>{ 
-        window.scrollTo = jest.fn();
-        const props:TestProps = {cvPosition: 60, skillPosition: 80, workHistoryPos: 100, educationPos: 120};
-        const navbarComponent = mount(<Navbar {...props}/>);
+    });
 
+    it('scrolls to top when "Presentation" link is clicked',()=>{ 
+        window.scrollTo = jest.fn();
         const presentationButton = navbarComponent.findWhere(node=>node.type()==='button' && node.text()==='Presentation');
         presentationButton.simulate('click');
         expect(window.scrollTo).toBeCalledWith(0,0);
+    });
 
+    it('scrolls to skill section when "Skills" link is clicked',()=>{
+        window.scrollTo = jest.fn();
         const SkillsButton = navbarComponent.findWhere(node=>node.type()==='button' && node.text()==='Skills');
         SkillsButton.simulate('click');
         expect(window.scrollTo).toBeCalledWith(0,20);
+    });
 
+    it('scrolls to education section "Education" link is clicked',()=>{
+        window.scrollTo = jest.fn();
         const EducationButton = navbarComponent.findWhere(node=>node.type()==='button' && node.text()==='Education');
         EducationButton.simulate('click');
         expect(window.scrollTo).toBeCalledWith(0,60);
+    });
 
+    it('scrolls to Work History section "Work History" link is clicked',()=>{
+        window.scrollTo = jest.fn();
         const WorkHistoryButton = navbarComponent.findWhere(node=>node.type()==='button' && node.text()==='Work History');
         WorkHistoryButton.simulate('click');
         expect(window.scrollTo).toBeCalledWith(0,40);
-
-        navbarComponent.unmount();
-        jest.clearAllMocks();
-    })
+    });
 })
