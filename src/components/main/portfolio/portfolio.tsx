@@ -25,7 +25,7 @@ const Portfolio:FC<PortfolioProps> = ({setHeight, animation})=>{
     return(
         <div ref={ divHeight } className='row'>
             <div className="col-12 col-md-6">
-                <InfoElementWrapper direction='left' className='card'>
+                <InfoElementWrapper direction='left' animation={ animation } className='card'>
                     <img src={EcommerceImg} alt='None' className='card-img-top'/>
                     <div className='card-body'>
                         <h5 className='card-title'>My E-commerce</h5>
@@ -36,7 +36,7 @@ const Portfolio:FC<PortfolioProps> = ({setHeight, animation})=>{
                 </InfoElementWrapper>
             </div>
             <div className="col-12 col-md-6">
-                <InfoElementWrapper direction='right' className='card'>
+                <InfoElementWrapper direction='right' animation={ animation } className='card'>
                     <img src={LeaveReqMgr} alt='None' className='card-img-top'/>
                     <div className='card-body'>
                         <h5 className='card-title'>Annual Leave requests manager app</h5>
