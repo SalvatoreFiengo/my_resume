@@ -1,7 +1,7 @@
 import { FC, MutableRefObject, useState, useEffect, useRef } from 'react';
 import { personalInfo, linksAndEdu } from '../../../mock-data/data';
 import { CustomCardAnimated, Profile, CardFooter } from '../../../styles/styles';
-
+import MyPicture from '../../../images/Salvatore_fiengo.jpg';
 
 type CvCardProps = {
     setCvPosition: (spyscroll:number)=>void
@@ -42,7 +42,7 @@ const CvCard:FC<CvCardProps>= ({setCvPosition})=>{
                     <div className='col-12 col-lg-6 col-xl-4'>
                         <img 
                             className='w-100 d-block ps-3' 
-                            src={ personalInfo[0].linkedinPicLink } 
+                            src={ MyPicture } 
                             alt='Salvatore Fiengo'>
                         </img>
                     </div> 
