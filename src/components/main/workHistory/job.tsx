@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { JobWrapper, JobList, Circle } from '../../../styles/styles';
+import { InfoElementWrapper, JobList, Circle } from '../../../styles/styles';
 
 type JobProps = {
     data:{
@@ -16,7 +16,7 @@ const Job: FC<JobProps> = ({ data, index, animation })=>{
 
     return(
         <div className='col-12 col-md-6' key={ data.id }>
-            <JobWrapper animation={ animation } direction={ index%2 === 0? 'left' : 'right' } className='card'>
+            <InfoElementWrapper animation={ animation } direction={ index%2 === 0? 'left' : 'right' } className='card'>
                 <div className='card-body'>
                     <h5 className='mb-2 text-center'>{ data.name }</h5>
                     <div className='row border-top border-dark m-3'>
@@ -38,7 +38,7 @@ const Job: FC<JobProps> = ({ data, index, animation })=>{
                         <Circle direction={ index%2 === 0? 'left' : 'right' } className='d-none d-md-block'></Circle>  
                     </div>
                 </div>
-            </JobWrapper>
+            </InfoElementWrapper>
         </div>
     )
 }

@@ -40,6 +40,25 @@ export const Animated = styled.div`
 
 /* Generic styles */
 
+const animationBasedOnDirection = css`
+    ${(props: AnimationProps) => props.animation?css`
+    opacity: 1;
+    animation: ${ (props: AnimationProps) => props.direction === 'left'? showUpLeft : showUpRight } 1s normal;
+    `: ''}
+
+    :after{
+        content: " ";
+        position: absolute;
+        right: ${ (props: AnimationProps) => props.direction === 'left'? '-15px;' : 'auto;' }
+        left: ${ (props: AnimationProps) => props.direction === 'right'? '-15px;' : 'auto;' }
+        top: 15px;
+        border-top: 15px solid transparent;
+        border-right: ${ (props: AnimationProps) => props.direction === 'left'? 'none;' : '15px solid #fff;' }
+        border-left: ${ (props: AnimationProps) => props.direction === 'left'? '15px solid #fff;' : 'none;' }
+        border-bottom: 15px solid transparent;
+    }
+`
+
 export const CustomCardAnimated = styled(Animated)`
     max-width: 960px;
     width: 75%;
@@ -62,7 +81,18 @@ export const Circle = styled.div`
     right: ${(props: AnimationProps)=>props.direction === 'left'?'-2.09rem;':'auto;'}
     left: ${(props: AnimationProps)=>props.direction === 'right'?'-2.1rem;':'auto;'}
 `
-
+export const InfoElementWrapper = styled(Animated)`
+    margin-top: 3rem;
+    border-top: 4px solid #198754;
+    color: #757575;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
+    @media screen and (min-width:768px){
+        margin-right: ${( props: AnimationProps )=> props.direction === 'left'? '1rem;':'auto;'}
+        margin-left: ${( props: AnimationProps )=> props.direction === 'right'? '1rem;':'auto;'}
+        margin-top: ${( props: AnimationProps )=> props.direction === 'right'? '5rem;':'3rem;'}
+        ${animationBasedOnDirection}
+    }
+`
 /* Header styles */
 
 export const HeaderWrapper = styled.div`
@@ -285,24 +315,7 @@ export const SVG = styled(Animated)`
 
 /* Education styles */
 
-const animationBasedOnDirection = css`
-    ${(props: AnimationProps) => props.animation?css`
-    opacity: 1;
-    animation: ${ (props: AnimationProps) => props.direction === 'left'? showUpLeft : showUpRight } 1s normal;
-    `: ''}
 
-    :after{
-        content: " ";
-        position: absolute;
-        right: ${ (props: AnimationProps) => props.direction === 'left'? '-15px;' : 'auto;' }
-        left: ${ (props: AnimationProps) => props.direction === 'right'? '-15px;' : 'auto;' }
-        top: 15px;
-        border-top: 15px solid transparent;
-        border-right: ${ (props: AnimationProps) => props.direction === 'left'? 'none;' : '15px solid #fff;' }
-        border-left: ${ (props: AnimationProps) => props.direction === 'left'? '15px solid #fff;' : 'none;' }
-        border-bottom: 15px solid transparent;
-    }
-`
 export const EducationWrapper = styled(Animated)`
     margin-top: ${ (props: AnimationProps) => props.direction === 'left'?' 3rem;' : '5rem;' }
     margin-left: ${ (props: AnimationProps) => props.direction === 'right'? '1rem;' : 'auto;' }
@@ -324,19 +337,6 @@ export const EducationWrapper = styled(Animated)`
 
 
 /* Work History */
-export const JobWrapper = styled(Animated)`
-    margin-top: 3rem;
-    border-top: 4px solid #198754;
-    color: #757575;
-    box-shadow: 0 1px 6px rgb(0 0 0 / 12%), 0 1px 4px rgb(0 0 0 / 24%);
-
-    @media screen and (min-width:768px){
-        margin-right: ${( props: AnimationProps )=> props.direction === 'left'? '1rem;':'auto;'}
-        margin-left: ${( props: AnimationProps )=> props.direction === 'right'? '1rem;':'auto;'}
-        margin-top: ${( props: AnimationProps )=> props.direction === 'right'? '5rem;':'3rem;'}
-        ${animationBasedOnDirection}
-    }
-`
 
 export const JobList = styled.ul`
     list-style: square;

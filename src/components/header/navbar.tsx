@@ -5,10 +5,11 @@ type ChildProps = {
     cvPosition: number,
     skillPosition: number,
     workHistoryPos: number,
-    educationPos: number
+    educationPos: number,
+    portfolioPos: number
 }
 
-const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educationPos })=>{
+const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educationPos, portfolioPos })=>{
     const [mobileNavDisplay, setMobileNavDisplay] = useState('d-none')
     const [navBackground, setNabBackground] = useState('nav-relative bg-transparent')
     const [pos,setPos] = useState(0);
@@ -28,9 +29,12 @@ const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educa
                 window.scrollTo(0,skillPosition-60);
                 break;
             case 3:
-                window.scrollTo(0,educationPos-60);
+                window.scrollTo(0,portfolioPos-60);
                 break;
             case 4:
+                window.scrollTo(0,educationPos-60);
+                break;
+            case 5:
                 window.scrollTo(0,workHistoryPos-60);
                 break;
             default:
@@ -76,7 +80,10 @@ const Navbar:FC<ChildProps> = ({ cvPosition, skillPosition,workHistoryPos, educa
                                 <ButtonLink onClick={()=>setPos(2)}>Skills</ButtonLink>
                             </li>
                             <li className="d-md-inline me-md-3">
-                                <ButtonLink onClick={()=>setPos(3)}>Education</ButtonLink>
+                                <ButtonLink onClick={()=>setPos(3)}>Portfolio</ButtonLink>
+                            </li>
+                            <li className="d-md-inline me-md-3">
+                                <ButtonLink onClick={()=>setPos(4)}>Education</ButtonLink>
                             </li>
                             <li className="d-md-inline">
                                 <ButtonLink onClick={()=>setPos(4)}>Work History</ButtonLink>

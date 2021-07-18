@@ -10,20 +10,22 @@ type TestProps = {
     cvPosition: number;
     skillPosition: number;
     workHistoryPos:number; 
-    educationPos:number
+    educationPos:number;
+    portfolioPos:number
 };
 
 describe('navbar', ()=>{
     it('renders Navbar component without crashing',()=>{
-        const props:TestProps = {cvPosition: 60, skillPosition: 80, workHistoryPos: 100, educationPos: 120};
+        const props:TestProps = {cvPosition: 60, skillPosition: 80, workHistoryPos: 100, educationPos: 120, portfolioPos:160};
         const navbarShallowComponent = shallow(<Navbar {...props}/>);
+        /*using getElements as html method gives error with styled components tags */
         expect(navbarShallowComponent.getElements()).toMatchSnapshot();
     });
 
     let navbarComponent:ReactWrapper<any,Readonly<{}>>;
 
     beforeEach(()=>{
-        const props:TestProps = {cvPosition: 60, skillPosition: 80, workHistoryPos: 100, educationPos: 120};
+        const props:TestProps = {cvPosition: 60, skillPosition: 80, workHistoryPos: 100, educationPos: 120, portfolioPos:160};
         navbarComponent = mount(<Navbar {...props}/>);
     });
 
